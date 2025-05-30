@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bus Ticket</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKB4Imkb9lH6TK5U6v1u8eZ3O/gx0f8fFbdIjZ5E0aHVKfGZ0T9ZM6bY6I5x8tv9Yv1c+6Fxg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      background-color: #002326;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .header-buttons {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .header-buttons button {
+      background-color: transparent;
+      border: 1px solid white;
+      color: white;
+      font-size: 12px;
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-left: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 50px);
+    }
+
+    .ticket {
+      width: 300px;
+      height: 500px;
+      background-color: #f25454;
+      border-radius: 20px;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+    }
+
+    .ticket::before,
+    .ticket::after {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #002326;
+      border-radius: 50%;
+      z-index: 5;
+    }
+
+    .ticket::before {
+      left: -20px;
+      top: 70%;
+      transform: translateY(-50%);
+    }
+
+    .ticket::after {
+      right: -20px;
+      top: 70%;
+      transform: translateY(-50%);
+    }
+
+    .corner {
+      content: "";
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #002326;
+      border-radius: 50%;
+      z-index: 4;
+    }
+
+    .corner.tl { top: -20px; left: -20px; }
+    .corner.tr { top: -20px; right: -20px; }
+    .corner.bl { bottom: -20px; left: -20px; }
+    .corner.br { bottom: -20px; right: -20px; }
+
+    .dashed-line {
+      width: 100%;
+      border-top: 2px dashed black;
+      position: absolute;
+      top: 70%;
+      left: 0;
+      transform: translateY(-1px);
+      z-index: 3;
+    }
+
+    .content {
+      height: 100%;
+      padding: 20px;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      z-index: 1;
+      position: relative;
+    }
+
+    .header {
+      text-align: center;
+    }
+
+    .header h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .header h1 {
+      margin: 10px 0;
+      font-size: 22px;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+
+    .header p {
+      font-size: 12px;
+      margin: 5px 0 0;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-top: auto;
+    }
+
+    .details {
+      font-size: 12px;
+      line-height: 0.9;
+    }
+
+    .qr {
+      width: 80px;
+      height: 80px;
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-buttons">
+    <button><i class="fas fa-paper-plane"></i> Send</button>
+    <button><i class="fas fa-download"></i> Save</button>
+  </div>
+  <div class="container">
+    <div class="ticket">
+      <div class="corner tl"></div>
+      <div class="corner tr"></div>
+      <div class="corner bl"></div>
+      <div class="corner br"></div>
+      <div class="dashed-line"></div>
+      <div class="content">
+        <div class="header">
+          <h3 id="ticket-status">(Rejected)</h3>
+          <h1 id="ticket-bus-name">Name bus<br>or company</h1>
+          <p>We wish you a pleasant travel.</p>
+        </div>
+        <div style="flex-grow: 1"></div>
+        <div class="bottom">
+          <div class="details">
+<p><i class="fa-solid fa-calendar-days"></i> Date : <span id="ticket-date">20/07/2025</span></p>
+<p><i class="fa-solid fa-location-dot"></i> To : <span id="ticket-to">Algeria</span></p>
+<p><i class="fa-solid fa-chair"></i> Seat number : <span id="ticket-seat">A13</span></p>
+<p><i class="fa-solid fa-money-bill"></i> Price : <span id="ticket-price">2000.00 DA</span></p>
+          </div>
+          <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=BusTicket" alt="QR Code">
+        </div>
+        <div class="footer">
+          Validate the ticket when boarding the bus.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

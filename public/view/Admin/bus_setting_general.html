@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <style>
+    .settings-container {
+      width: 600px;
+      margin: 40px auto;
+      border: 1px solid #ddd;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    .tab {
+      padding: 10px 20px;
+      cursor: pointer;
+      color: #555;
+    }
+    .tab.active {
+      background-color: #ccc;
+      border-radius: 5px 5px 0 0;
+      font-weight: bold;
+    }
+    .setting-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+    select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .themes {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .themes input[type="radio"] {
+      margin-right: 5px;
+    }
+    .go-back {
+      text-align: right;
+      margin-bottom: 20px;
+    }
+    .go-back a {
+      text-decoration: none;
+      color: #4a90e2;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #333;
+      font-size: 14px;
+    }
+    .top-bar .admin-info {
+      color: #888;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .top-bar .admin-info i {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="settings-container">
+  <div class="go-back">
+    <a href="#">Go Back</a>
+  </div>
+
+  <div class="tabs">
+    <div class="tab">Account</div>
+    <div class="tab active">General</div>
+    <div class="tab">Help</div>
+  </div>
+
+  <div class="setting-group">
+    <label for="language">Language:</label>
+    <select id="language">
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+      <option value="ar">العربية</option>
+    </select>
+  </div>
+
+  <div class="setting-group">
+    <label>Themes:</label>
+    <div class="themes">
+      <label><input type="radio" name="theme" checked> Light</label>
+      <label><input type="radio" name="theme"> Dark</label>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
