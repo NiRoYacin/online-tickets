@@ -165,7 +165,105 @@ window.addEventListener('DOMContentLoaded', () => {
       containerMain.style.display = "block"; // إظهار العنصر الرئيسي
     });
   });
+   
+  // data_in_mini map:
+  const tooltip = document.getElementById('tooltip');
+  const svg = document.getElementById('route-svg');
+  const container = document.querySelector('.route-diagram');
 
+  function showTooltip(e, text) {
+    tooltip.textContent = text;
+    tooltip.style.display = 'block';
+
+    const bounds = container.getBoundingClientRect();
+    const mouseX = e.clientX - bounds.left;
+    const mouseY = e.clientY - bounds.top;
+
+    tooltip.style.left = mouseX + 10 + 'px';
+    tooltip.style.top = mouseY - 30 + 'px';
+  }
+
+  function hideTooltip() {
+    tooltip.style.display = 'none';
+  }
+
+  svg.querySelectorAll('circle').forEach(circle => {
+    circle.addEventListener('mouseenter', e => {
+      showTooltip(e, circle.dataset.time);
+    });
+
+    circle.addEventListener('mousemove', e => {
+      const bounds = container.getBoundingClientRect();
+      const mouseX = e.clientX - bounds.left;
+      const mouseY = e.clientY - bounds.top;
+
+      tooltip.style.left = mouseX + 10 + 'px';
+      tooltip.style.top = mouseY - 30 + 'px';
+    });
+
+    circle.addEventListener('mouseleave', hideTooltip);
+    circle.addEventListener('click', e => {
+      showTooltip(e, circle.dataset.time);
+      e.stopPropagation();
+    });
+  });
+
+  document.addEventListener('click', hideTooltip);
+  // -----------------:
+      const stations = [
+    { name: "Algiers", x: 30, y: 80, time: "00:00", type: "start" },
+    { name: "Blida", x: 150, y: 40, time: "00:45", type: "stop" },
+    { name: "Chlef", x: 300, y: 60, time: "02:00", type: "stop" },
+    { name: "Oran", x: 500, y: 80, time: "04:00", type: "end" }
+  ];
+
+
+  // Draw path
+  let pathData = `M${stations[0].x},${stations[0].y}`;
+  for (let i = 1; i < stations.length; i++) {
+    pathData += ` L${stations[i].x},${stations[i].y}`;
+  }
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", pathData);
+  path.setAttribute("stroke", "#888");
+  path.setAttribute("fill", "transparent");
+  path.setAttribute("stroke-dasharray", "4");
+  svg.appendChild(path);
+
+  // Draw stations
+  stations.forEach(station => {
+    const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+    circle.setAttribute("cx", station.x);
+    circle.setAttribute("cy", station.y);
+    circle.setAttribute("r", 6);
+    circle.setAttribute("fill", station.type === "start" ? "green" :
+                                 station.type === "end" ? "red" : "#0a7075");
+    circle.addEventListener("mouseenter", e => {
+      tooltip.innerText = `${station.name} - ${station.time}`;
+      tooltip.style.display = "block";
+    });
+    circle.addEventListener("mouseleave", () => {
+      tooltip.style.display = "none";
+    });
+    circle.addEventListener("mousemove", e => {
+     const rect = svg.getBoundingClientRect();
+     const x = e.clientX - rect.left + 10;
+     const y = e.clientY - rect.top - 30;
+     tooltip.style.left = x + "px";
+     tooltip.style.top = y + "px";
+    });
+
+    svg.appendChild(circle);
+
+    // Add station name
+    const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    text.setAttribute("x", station.x - 20);
+    text.setAttribute("y", station.y + 20);
+    text.setAttribute("font-size", "11");
+    text.textContent = station.name;
+    svg.appendChild(text);
+  });
   // payment info 
     document.addEventListener("DOMContentLoaded", () => {
     const tripDetailsLinks = document.querySelectorAll(".trip-links a");

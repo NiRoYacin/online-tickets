@@ -597,7 +597,7 @@ select, input[type="date"], input[type="time"] {
 
 .trip-item:hover .trip-info i,
 .trip-item:hover strong {
-  color: #0a7075; /* لون من ألوانك */
+  color: #0a7075;
 }
 
 .trip-item:hover .direction-btn {
@@ -658,6 +658,18 @@ select, input[type="date"], input[type="time"] {
     }
 
 /* trip detail */
+ .tooltip {
+    position: absolute;
+    background: #0a7075;
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    pointer-events: none;
+    display: none;
+    z-index: 100000;
+ }
 
  .container_ditil {
       position: relative;
@@ -718,8 +730,10 @@ select, input[type="date"], input[type="time"] {
     }
 
     .route-diagram {
-      text-align: center;
-      margin-bottom: 20px;
+      position: relative;
+      margin-top: 40px;
+      overflow-x: auto;
+      white-space: nowrap;
     }
 
     .route-diagram svg {

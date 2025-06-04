@@ -399,14 +399,16 @@
       </div>
 
       <div class="route-diagram">
-        <svg viewBox="0 0 500 100">
+        <!-- <svg viewBox="0 0 500 100"  id="route-svg">
           <path d="M20,80 C150,10 350,10 480,80" stroke="#888" stroke-dasharray="4" fill="transparent"/>
-          <circle cx="20" cy="80" r="5" fill="#0a7075"/>
-          <circle cx="250" cy="20" r="5" fill="#0a7075"/>
-          <circle cx="480" cy="80" r="5" fill="#0a7075"/>
+          <circle cx="20" cy="80" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
+          <circle cx="250" cy="20" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
+          <circle cx="480" cy="80" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
           <text x="10" y="95" font-size="12">Starting</text>
-          <text x="470" y="95" font-size="12">Final Staition</text>
-        </svg>
+          <text x="470" y="95" font-size="12">End</text>
+        </svg> -->
+        <svg id="route-svg" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet"></svg>
+        <div id="tooltip" class="tooltip"></div>
       </div>
 
       <div class="dates">
@@ -414,9 +416,10 @@
         <span><i class="fa-solid fa-calendar-days"></i> Returning: 18 Apr 2025</span>
       </div>
 
-      <div class="price">
-        💸 Ticket Price: <span>2000.00 DZD</span>
-      </div>
+     <div class="price">
+        <i class="fas fa-money-bill"></i> Ticket Price: <span>2000.00 DZD</span>
+     </div>
+
 
       <button class="buy-btn">Buy</button>
     </div>
