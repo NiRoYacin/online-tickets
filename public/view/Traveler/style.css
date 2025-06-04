@@ -422,10 +422,12 @@ body {
 }
 
 .hero-content h1 {
-  position: relative;
+  /*position: relative;*/
+  position: absolute;
   z-index: 2;
   font-size: 5rem;
   top:10%;
+  left:5%;
   color: #ffffff;
   max-width: 400px;
   
@@ -525,7 +527,8 @@ select, input[type="date"], input[type="time"] {
       left: 1%;
       z-index: 2;
       display: none;
-      width: 1150px;
+     /* width: 1150px;*/
+      width: 85%;
       margin:-40px auto 50px;
       padding: 3px;
     }
@@ -661,7 +664,8 @@ select, input[type="date"], input[type="time"] {
       top: 10px;
       left: 1%;
      display: none;
-      width: 1150px;
+      /*width: 1150px;*/
+      width: 85%;
       z-index: 2;
       margin: -40px auto 50px;
       padding: 30px;
@@ -885,7 +889,8 @@ select, input[type="date"], input[type="time"] {
       position: relative;
       top: -70px;
       left: 1%;
-      width: 1150px;
+      /*width: 1150px;*/
+      width: 85%;
       z-index: 2;
       margin: -40px auto 50px;
       display: none;
