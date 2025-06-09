@@ -264,6 +264,7 @@ window.addEventListener('DOMContentLoaded', () => {
     text.textContent = station.name;
     svg.appendChild(text);
   });
+  //////////////////////////////////////////////////////////////////////////
   // payment info 
     document.addEventListener("DOMContentLoaded", () => {
     const tripDetailsLinks = document.querySelectorAll(".trip-links a");
@@ -427,4 +428,22 @@ window.addEventListener('DOMContentLoaded', function () {
   // setInterval(changeImage, 10000); // كل 10 ثواني
   // window.onload = changeImage; // لبدء السلايدر فور تحميل الصفحة
 
-//////////////////////////// ticket //////////////////
+//////////////////////////// trip details //////////////////
+  document.querySelectorAll('.trip-details').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault(); // منع الانتقال
+
+      // جلب المعلومات من الـ data attributes
+      const name = this.dataset.name;
+      const phone = this.dataset.phone;
+      const seat = this.dataset.seat;
+      const price = this.dataset.price;
+
+      
+      // تعيين القيم في الـ .top
+      document.getElementById('bus-name').textContent = name;
+      document.getElementById('bus-phone').textContent = 'tele: ' + phone;
+      document.getElementById('seat-number').textContent = 'Your seat number : ' + seat;
+      document.getElementById('ticket-price').textContent = price+' DZD';
+    });
+  });
