@@ -134,7 +134,7 @@
         <input list="to-list" id="to" name="to" placeholder="Type or select state" required>
         <datalist id="to-list">
 
-          <option value="01 Adrar">
+          <option value="01 Adrar"> 
           <option value="02 Chlef">
           <option value="03 Laghouat">
           <option value="04 Oum El Bouaghi">
@@ -281,7 +281,8 @@
     </div>
   </div>
 
-  <!-- show trip ruselt -->
+  <!-- show trip ruselt -->   
+
   <div class="container" id="trip-results">
     <div class="card">
       <h2><i class="fa-solid fa-bus"></i> Book a Trip</h2>
@@ -298,20 +299,20 @@
           <div class="trip-info">
             <i class="fa-solid fa-bus fa-xl"></i>
             <div class="bus-details">
-
+     
               <strong>ISLAM TRAVEL</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0698628760</span>
                 <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
-                <span><i class="fa-regular fa-clock"></i> 20:30</span>
-  
+                <span><i class="fa-regular fa-clock"></i> 20:30</span> 
               </div>
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="ISLAM TRAVEL" data-phone="0698628760" data-seat="A05" data-Price="200.00DA">Trip details</a>
+            <a href="#" class="trip-details" data-name="ISLAM TRAVEL" data-phone="0698628760" data-seat="A05" data-Price="200.00DA"  onclick="selectTrip(this)">Trip details </a>
             <!-- <a href="#">Trip details</a> -->
             <button class="direction-btn">Price:200.00DA</button>
+            
           </div>
         </div>
         
@@ -328,7 +329,7 @@
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="SAFRR PLUS" data-phone="0655894523" data-seat="30" data-Price="1500.00DA">Trip details</a>
+            <a href="#" class="trip-details" data-name="SAFRR PLUS" data-phone="0655894523" data-seat="30" data-Price="1500.00DA"  onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:1500.00DA</button>
           </div>
         </div>
@@ -345,8 +346,9 @@
               </div>
             </div>
           </div>
+
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="NORE WAY" data-phone="0696677550" data-seat="26" data-Price="2500.00DA">Trip details</a>
+            <a href="#" class="trip-details" data-name="NORE WAY" data-phone="0696677550" data-seat="26" data-Price="2500.00DA" onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:2500.00DA</button>
           </div>
         </div>
@@ -364,7 +366,7 @@
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="AL RHAA" data-phone="0695544330" data-seat="31" data-Price="1550.00DA">Trip details</a>
+            <a href="#" class="trip-details" data-name="AL RHAA" data-phone="0695544330" data-seat="31" data-Price="1550.00DA"  onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:1550.00DA</button>
           </div>
         </div>
@@ -380,8 +382,9 @@
               </div>
             </div>
           </div>
+          
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="NJMA WAY" data-phone="0699988770" data-seat="25" data-Price="4500.00DA">Trip details</a>
+            <a href="#" class="trip-details" data-name="NJMA WAY" data-phone="0699988770" data-seat="25" data-Price="4500.00DA" onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:4500.00DA</button>
           </div>
         </div>
@@ -494,9 +497,10 @@
           <input type="text" maxlength="3" placeholder="***" required>
 
 
-          <a href="ticket.html" class="buy-btn2" id="buyButton" onclick="return validateForm()">Buy</a>
+          <!-- <a href="ticket.html" class="buy-btn2"  onclick="return validateForm()" >Buy</a> -->
+          <a href="ticket.html" class="buy-btn2" id="buyButton"  onclick="return validateForm()">Buy</a>
 
-
+       
         </div>
       </div>
 
@@ -565,29 +569,8 @@
         }
       </script>
 
-
-<!--haja zayda -->
-<!-- <script>
-  document.querySelectorAll('.trip-details').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault(); // منع الانتقال
-
-      // جلب المعلومات من الـ data attributes
-      const name = this.dataset.name;
-      const phone = this.dataset.phone;
-      const seat = this.dataset.seat;
-      const price = this.dataset.price;
-
       
-      // تعيين القيم في الـ .top
-      document.getElementById('bus-name').textContent = name;
-      document.getElementById('bus-phone').textContent = 'tele: ' + phone;
-      document.getElementById('seat-number').textContent = 'Your seat number : ' + seat;
-      document.getElementById('ticket-price').textContent = price+' DZD';
-    });
-  });
-</script> -->
-<!-- //////////////////////////////////end -->
+
 </body>
 
 </html>
