@@ -37,7 +37,7 @@
     <i class="fas fa-user"></i>
     <div>Show Lists</div>
   </div>
-  <div class="card">
+  <div class="card" id="busManagementCard">
     <i class="fas fa-bus"></i>
     <div>Bus Management</div>
   </div>
@@ -64,97 +64,62 @@
         <span>066554848</span>
         <i class="material-icons">event_seat</i>
         <span>Sits: 00</span>
+        <i class="fa-regular fa-clock"></i>
+        <span>20:30</span>
       </div>
       <div class="destination">
         <i class="material-icons">attach_money</i>
         2000.00 DA
       </div>
-      <button class="edit-button">
+      <button class="edit-button_form1" style="display: flex; justify-content: space-between; align-items: center;">
         <i class="material-icons">edit</i> Edit
       </button>
     </div>
 
-    <div class="bus-item"  data-name="Bus 1" data-tele="066554848" data-sits="00" data-destination="Destination A" data-time="10:15" data-stopstation="Station A" data-returning="false">
-      <div class="info">
-        <i class="material-icons">directions_bus</i>
-        <span>Name</span>
-        <i class="material-icons">call</i>
-        <span>066554848</span>
-        <i class="material-icons">event_seat</i>
-        <span>Sits: 00</span>
-      </div>
-      <div class="destination">
-        <i class="material-icons">attach_money</i>
-        2000.00 DA
-      </div>
-      <button class="edit-button">
-        <i class="material-icons">edit</i> Edit
-      </button>
-    </div>
-
-    <div class="bus-item"  data-name="Bus 1" data-tele="066554848" data-sits="00" data-destination="Destination A" data-time="10:15" data-stopstation="Station A" data-returning="false">
-      <div class="info">
-        <i class="material-icons">directions_bus</i>
-        <span>Name</span>
-        <i class="material-icons">call</i>
-        <span>066554848</span>
-        <i class="material-icons">event_seat</i>
-        <span>Sits: 00</span>
-      </div>
-      <div class="destination">
-        <i class="material-icons">attach_money</i>
-        2000.00 DA
-      </div>
-      <button class="edit-button">
-        <i class="material-icons">edit</i> Edit
-      </button>
-    </div>
-    <div class="bus-item"  data-name="Bus 1" data-tele="066554848" data-sits="00" data-destination="Destination A" data-time="10:15" data-stopstation="Station A" data-returning="false">
-      <div class="info">
-        <i class="material-icons">directions_bus</i>
-        <span>Name</span>
-        <i class="material-icons">call</i>
-        <span>066554848</span>
-        <i class="material-icons">event_seat</i>
-        <span>Sits: 00</span>
-      </div>
-      <div class="destination">
-        <i class="material-icons">attach_money</i>
-        2000.00 DA
-      </div>
-      <button class="edit-button">
-        <i class="material-icons">edit</i> Edit
-      </button>
-    </div>
   </div>
 </div>
 
 <!-- edit bus info  -->
  <div id="busPopup" class="popup">
-  <span id="goBack">Go Back</span>
+  <span id="goBack"></span>
   <h2>Bus information edit :</h2>
-  
-  <div class="form-group">
-    <label for="name">Name:</label>
-    <input type="text" id="name">
-    <label for="tele">Tele:</label>
-    <input type="text" id="tele">
-  </div>
-  
-  <div class="form-group">
-    <label for="direction">Price</label>
-    <input type="text" id="direction">
-    <label for="time">Time Starting:</label>
-    <input type="time" id="time" value="10:15">
-  </div>
+  <div class="all-group">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name">
+      <label for="tele">Tele:</label>
+      <input type="text" id="tele">
+    </div>
+    
+    <div class="form-group">
+      <label for="direction">Price:</label>
+      <input type="text" id="direction">
+      <label for="time">Time Starting:</label>
+      <input type="time" id="time" value="10:15">
+    </div>
 
-  <div class="form-group">
-    <label for="stopStation">Stop Station:</label>
-    <input type="text" id="stopStation">
-    <label for="returning">Returning:</label>
-    <input type="checkbox" id="returning">
-  </div>
+    <div class="form-group">
+          <label for="direction">site:</label>
+          <input type="text" id="site">
+      <button type="button" id="openStationModalBtn">Add Station</button>
+      <div id="stationModal">
+      <div class="station-modal-content">
+        <div class="station-modal-header">
+          <h2> Station Management</h2>
+          <button class="closeStationModalBtn" onclick="closeStationModal()">×</button>
+        </div>
+        <input type="text" id="stationInputField" placeholder="Station Name">
+        <button onclick="addStopStation()">Add Station</button>
 
+        <div id="stationListContainer">
+          <ul id="stationListDisplay"></ul>
+        </div>
+      </div>
+    </div>
+      <ul id="stationList"></ul>
+
+    </div>
+  </div>
   <div class="form-footer">
     <button id="cleanBtn">Clean</button>
     <button id="cancelBtn">Cancel</button>
@@ -297,7 +262,105 @@
 
 
 
-    
+   
+<!-- the bus management side -->
+<div   id="busMgmtPage" class="hidden">
+  <div style="display: flex; justify-content: flex-end;">
+   <button id="goBackFromBusMgmt">Go Back</button>
+  </div>
+
+  <h2>Bus Management</h2>
+
+  <div class="bus-mgmt-stats">
+    <div class="bus-mgmt-stat bus-mgmt-drivers">
+      <i class="fas fa-bus"></i>
+      <span>Total Buses</span>
+      <p>14</p>
+    </div>
+    <div class="bus-mgmt-stat bus-mgmt-available">
+      <i class="fas fa-bus"></i>
+      <span>Available Buses</span>
+      <p>10</p>
+    </div>
+    <div class="bus-mgmt-stat bus-mgmt-outservice">
+      <i class="fas fa-tools"></i>
+      <span>Out of Service</span>
+      <p>4</p>
+    </div>
+  </div>
+
+ <div class="bus-mgmt-tables">
+
+  <!-- جدول السائقين -->
+  <div class="bus-mgmt-table-wrapper bus-mgmt-driver-table" title="Double-click a row to delete it">
+    <h3 class="table-title"> Driver List </h3>
+    <table class="bus-mgmt-table">
+      <thead>
+        <tr>
+          <th>Driver ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- تتم إضافة السائقين هنا عبر JavaScript -->
+      </tbody>
+    </table>
+    <button class="bus-mgmt-add-driver-btn"><i class="fas fa-plus"></i> Add New Driver</button>
+  </div>
+
+  <!-- جدول الحافلات -->
+  <div class="bus-mgmt-table-wrapper bus-mgmt-bus-table">
+    <h3 class="table-title"> Bus List </h3>
+    <table class="bus-mgmt-table">
+      <thead>
+        <tr>
+          <th>Bus ID</th>
+          <th>Matricule</th>
+          <th>Seats</th>
+          <th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- تتم إضافة الحافلات هنا عبر JavaScript -->
+      </tbody>
+    </table>
+    <button class="bus-mgmt-add-bus-btn"><i class="fas fa-plus"></i> Add New Bus</button>
+  </div>
+
+</div>
+
+
+<!-- Driver Form Modal -->
+<div id="driverFormModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Add Driver</h3>
+    <input type="text" id="driverIdInput" placeholder="Driver ID">
+    <input type="text" id="firstNameInput" placeholder="First Name">
+    <input type="text" id="lastNameInput" placeholder="Last Name">
+    <button id="submitDriverBtn">Add</button>
+    <button onclick="document.getElementById('driverFormModal').classList.add('hidden')">Cancel</button>
+  </div>
+</div>
+
+<!-- Bus Form Modal -->
+<div id="busFormModal" class="modal hidden">
+  <div class="modal-content">
+    <h3>Add Bus</h3>
+    <input type="text" id="busIdInput" placeholder="Bus ID">
+    <input type="text" id="matriculeInput" placeholder="Matricule">
+    <input type="number" id="seatsInput" placeholder="Seats">
+    <input type="text" id="companyInput" placeholder="Company">
+    <button id="submitBusBtn">Add</button>
+    <button onclick="document.getElementById('busFormModal').classList.add('hidden')">Cancel</button>
+  </div>
+</div>
+<div id="deleteConfirmBox" class="confirm-box hidden">
+  <p>هل تريد حذف هذا السطر؟</p>
+  <button id="confirmDeleteBtn">نعم</button>
+  <button id="cancelDeleteBtn">لا</button>
+</div>
+
 <!-- notification -->
 <div class="notifi  hidden">
     <span id="goBackNotifi" class="go-back-btn">Go Back</span>
@@ -335,6 +398,6 @@
     </div>
   </div>
 </div>
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

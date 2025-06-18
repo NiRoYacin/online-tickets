@@ -39,15 +39,15 @@
   font-family: 'Poppins', sans-serif;
 }
 
-/* الخط المتحرك */
+
 .logo-text::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -4px; /* أسفل النص مباشرة */
+  bottom: -4px; 
   width: 0;
   height: 2px;
-  background-color: #0c969c; /* لون الخط */
+  background-color: #0c969c; 
   transition: width 0.3s ease-in-out;
 }
 
@@ -104,7 +104,7 @@
       padding: 8px 15px;
       border: 1px solid #888;
       border-radius: 6px;
-      background: white;
+      background: #36827F;
       cursor: pointer;
       font-weight: bold;
       display: flex;
@@ -149,6 +149,7 @@
       background: white;
       margin-top: 20px;
     } */
+
     .hidden {
   opacity: 0;
   pointer-events: none;
@@ -176,11 +177,31 @@
       text-decoration: underline;
     }
 
-    .header a {
-      text-decoration: none;
-      color: #5dade2;
-      font-size: 16px;
+  #goBackBtn,
+  #goBackBtn:link {
+  background-color: #0a7075;
+  color: white;
+  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+   #goBackBtn:hover {
+      background-color: #0c969c;     
+      transform: translateY(-2px);  
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
+
+   #goBackBtn:active {
+      background-color: #066063;     
+      transform: scale(0.97);        
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
 
     .bus-list {
       margin-top: 20px;
@@ -250,7 +271,7 @@
       border: 1px solid #5dade2;
     }
 
-    .edit-button {
+    .edit-button_form1 {
       background: #d6e9f9;
       border: none;
       color: #337ab7;
@@ -264,21 +285,28 @@
       transition: background 0.3s, color 0.3s;
       position: absolute;
       right: 10px;
-      top: 50%;
-      transform: translateY(-50%);
+      
+      /* transform: translateY(-50%); */
+      box-sizing: border-box;
+       height: 40px
     }
 
-    .edit-button:hover {
+    .edit-button_form1:hover {
       background: #5dade2;
       color: white;
     }
 
-    .edit-button i {
-      font-size: 20px;
-    }
+    .edit-button_form1 i {
+     font-size: 18px;
+     line-height: 1;
+     vertical-align: middle;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+    } 
     /* edit bus info  */
     .popup {
-      display: none;
+       display: none; 
       position: fixed;
       width: 500px;
       padding: 20px;
@@ -368,10 +396,9 @@
       color: #55aacc;
       cursor: pointer;
     }
-
     .hidden {
       display: none;
-    }
+    } 
 
     .error {
       border: 2px solid red;
@@ -482,15 +509,22 @@ h2 {
     .left-form {
       flex: 1;
     }
-
+    .all-group {
+     display: flex;
+      gap: 10px 40px; 
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
     .form-group {
       display: flex;
       align-items: center;
+      
+      min-width: 300px;
       margin-bottom: 10px;
     }
 
     .form-group label {
-      width: 80px;
+      width: 52px;
       font-size: 14px;
     }
 
@@ -498,7 +532,7 @@ h2 {
       width: 130px;
       padding: 5px 8px;
       border: 1px solid #ccc;
-      border-radius: 10px;
+      border-radius: 8px;
       font-size: 13px;
       margin-left: 5px;
     }
@@ -555,8 +589,8 @@ h2 {
   margin-left: -425px;
 
   display: flex;
-  flex-direction: column; /* <<< اجعل الترتيب عموديًا */
-  gap: 20px; /* مسافة بين الإشعارات */
+  flex-direction: column; 
+  gap: 20px; 
   
   background: white;
   z-index: 11;
@@ -593,18 +627,18 @@ h2 {
 
 
     .notifi:hover {
-  background-color: #e0f7fa; /* لون خلفية فاتح عند المرور */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* ظل خفيف */
-  transform: translateY(-3px); /* رفع بسيط */
+  background-color: #e0f7fa; 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+  transform: translateY(-3px); 
 }
   .notifi:hover .icon-circle {
-  background-color: #0288d1 !important; /* تغيير لون الخلفية للأيقونة عند المرور */
+  background-color: #0288d1 !important; 
   color: white;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .notifi:hover .notification-title {
-  color: #01579b; /* تغيير لون العنوان */
+  color: #01579b; 
   transition: color 0.3s ease;
 }
 
@@ -684,14 +718,13 @@ h2 {
       box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
       background-color: #fff;
     }
-    .hidden {
-     display: none;
-    }
+ 
+    
     .order-history-container:not(.hidden) {
       display: block;
     }
 
-/* نخفي كل البطاقات عند فتح order history */
+
     .cards.hidden {
      display: none;
     }
@@ -708,18 +741,28 @@ h2 {
       color: #333;
     }
 
-    .go-back_order {
-      color: #609dc4;
+   .header a.go-back_order {
+      background-color: #0a7075;     
+      color: white;
       text-decoration: none;
-      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
       font-size: 16px;
-      transition: color 0.3s ease;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-
-    .go-back_order:hover {
-      color: #2c6a96;
+   .header a.go-back_order:hover {
+      background-color: #0c969c;     
+      transform: translateY(-2px);  
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     }
-
+    .go-back_order:active {
+      background-color: #066063;     
+      transform: scale(0.97);        
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
     .order-card {
       display: flex;
       justify-content: space-between;
@@ -771,3 +814,316 @@ h2 {
       background-color: #e0f4f4;
       color: #0a7075;
     }
+    /*  about station  */
+    #stationList {
+  padding: 0;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+#stationList li {
+  margin-bottom: 12px;
+  padding: 12px;
+  background-color: #e8f0f5;
+  border-radius: 8px;
+  list-style: none;
+  transition: background-color 0.3s ease;
+  position: relative;
+}
+
+#stationList li:hover {
+  background-color: #d1ecf1;
+}
+
+
+
+ button {
+      background-color: #0a7075;   
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background-color: #0c969c;     
+      transform: translateY(-2px);   
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    button:active {
+      background-color: #066063;     
+      transform: scale(0.97);        
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+      #openStationModalBtn {
+      background-color: #0a7075;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #openStationModalBtn:hover {
+      background-color: #0c969c;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    #stationModal {
+      display: none; 
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .station-modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 400px;
+      max-width: 90%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .station-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .station-modal-header h2 {
+      margin: 0;
+    }
+
+    .closeStationModalBtn {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    .station-modal-content input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .station-modal-content button {
+      background-color: #0a7075;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 5px;
+    }
+
+    .station-modal-content button:hover {
+      background-color: #0c969c;
+    }
+
+    #stationListContainer {
+      margin-top: 15px;
+    }
+
+    #stationListContainer ul {
+      padding-left: 20px;
+    }
+
+    #stationListContainer li {
+      margin-bottom: 5px;
+      color: #274060;
+    }
+  .station-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  margin-bottom: 6px;
+  width: 80%;
+}
+
+#stationListDisplay .station-item .delete-station-btn {
+  background: none;
+  border: none;
+  color: #2e0d0f;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#stationListDisplay .station-item .delete-station-btn:hover {
+  color: #a80000;
+}
+
+
+
+
+
+/* the bus management side: */
+.bus-mgmt-page {
+  padding: 30px;
+  font-family: Arial, sans-serif;
+}
+
+.bus-mgmt-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.bus-mgmt-stat {
+  flex: 1;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.bus-mgmt-drivers { 
+  background-color: #6ba3be; 
+}
+.bus-mgmt-drivers:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  background-color: rgb(97, 136, 221); 
+}
+.bus-mgmt-available { 
+  background-color: #a2d8a4; 
+}
+.bus-mgmt-available:hover {
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  background-color: #7ed699; 
+}
+.bus-mgmt-outservice { 
+  background-color: #f57373; 
+}
+.bus-mgmt-outservice:hover { 
+  transform: translateY(-5px); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); 
+  background-color: #f74a4a; 
+}
+
+.bus-mgmt-stat i {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.bus-mgmt-stat p {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.bus-mgmt-tables {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.bus-mgmt-table-wrapper {
+  flex: 1;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.bus-mgmt-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 15px;
+}
+
+.bus-mgmt-table thead {
+  background-color: #789c9e;
+  color: white;
+}
+
+.bus-mgmt-table th,
+.bus-mgmt-table td {
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #c0c0c0;
+}
+
+.bus-mgmt-add-driver-btn,
+.bus-mgmt-add-bus-btn {
+  background-color: #2b7a78;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.bus-mgmt-add-driver-btn:hover,
+.bus-mgmt-add-bus-btn:hover {
+  background-color: #205e5e;
+}
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.hidden {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+tr.selected {
+  background-color: #ffe6e6;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.3);
+}
