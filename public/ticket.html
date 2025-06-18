@@ -8,6 +8,7 @@
   <style>
     body {
       background-color: #002326;
+      /* background-color: aliceblue; */
       font-family: Arial, sans-serif;
       margin: 0;
     }
@@ -175,12 +176,13 @@
         </div>
         <div style="flex-grow: 1"></div>
         <div class="bottom">
-          <div class="details">
-<p><i class="fa-solid fa-calendar-days"></i> Date : <span id="ticket-date">20/07/2025</span></p>
-<p><i class="fa-solid fa-location-dot"></i> To : <span id="ticket-to">Algeria</span></p>
-<p><i class="fa-solid fa-chair"></i> Seat number : <span id="ticket-seat">A13</span></p>
-<p><i class="fa-solid fa-money-bill"></i> Price : <span id="ticket-price">2000.00 DA</span></p>
-          </div>
+<div class="details">
+  <p><i class="fa-solid fa-calendar-days"></i> Date : <span id="ticket-date">20/07/2025</span></p>
+  <p><i class="fa-solid fa-location-dot"></i> To : <span id="ticket-to">Algeria</span></p>
+  <p><i class="fa-solid fa-chair"></i> Seat number : <span id="ticket-seat">A13</span></p>
+  <p><i class="fa-solid fa-money-bill"></i> Price : <span id="ticket-price">2000.00 DA</span></p>
+</div>
+
           <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=BusTicket" alt="QR Code">
         </div>
         <div class="footer">
@@ -189,5 +191,20 @@
       </div>
     </div>
   </div>
+
+
+<script>
+  // عند تحميل الصفحة، نعرض البيانات
+  window.onload = function () {
+    document.getElementById("ticket-bus-name").innerText = localStorage.getItem("tripName") || "No Name";
+    document.getElementById("ticket-seat").innerText = localStorage.getItem("tripSeat") || "-";
+    document.getElementById("ticket-price").innerText = localStorage.getItem("tripPrice") || "-";
+    document.getElementById("ticket-to").innerText = localStorage.getItem("tripDestination") || "-";
+    // يمكنك إضافة باقي البيانات هنا مثل التاريخ أو الوجهة حسب الحاجة
+  };
+</script>
+
+  <script src="view/Traveler/script.js"></script>
+
 </body>
 </html>

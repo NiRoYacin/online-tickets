@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,37 +8,38 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="view/Traveler/style.css">
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
     <div class="logo">
-  <img src="/public/view/Admin/my_logo.jpg" alt="Logo" class="logo-img">
-  <span class="logo-text">Online&nbsp;Tickets</span>
-</div>
+      <img src="/public/view/Admin/my_logo.jpg" alt="Logo" class="logo-img">
+      <span class="logo-text">Online&nbsp;Tickets</span>
+    </div>
 
     <nav class="nav-links">
       <a href="#" data-key="Book">Book</a>
-      <a href="#"data-key="About Us">About Us</a>
-      <a href="#"data-key="Help">Help</a>
+      <a href="#" data-key="About Us">About Us</a>
+      <a href="#" data-key="Help">Help</a>
     </nav>
-    
+
     <div class="navigation">
-        <div class="language-selector">
-    <button class="language-btn">EN <i class="fas fa-chevron-down"></i></button>
-    <ul class="language-dropdown">
-      <li><a href="#"  data-lang="EN">English</a></li>
-      <li><a href="#"  data-lang="FR">Français</a></li>
-      <li><a href="#"  data-lang="AR">العربية</a></li>
-    </ul>
-  </div>
+      <div class="language-selector">
+        <button class="language-btn">EN <i class="fas fa-chevron-down"></i></button>
+        <ul class="language-dropdown">
+          <li><a href="#" data-lang="EN">English</a></li>
+          <li><a href="#" data-lang="FR">Français</a></li>
+          <li><a href="#" data-lang="AR">العربية</a></li>
+        </ul>
+      </div>
       <button class="btnlogin-popup" id="loginButton">Log in | Sign in</button>
     </div>
-  </header> 
+  </header>
 
-  <!-- Hero Section -->  
+  <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Enjoy your trip with us</h1>
@@ -45,170 +47,171 @@
     <div class="hero-image">
       <img id="hero-img" src="view/Traveler/bus.jpg" alt="Bus Image">
     </div>
-  </section>  
+  </section>
 
   <!-- Booking Section -->
   <section class="booking" id="booking-section">
     <h2><i class="fas fa-bus"></i> Book a Trip</h2>
-   <form class="booking-form" id="bookingForm">
-  
-  <div class="form-group">
-  <label for="from">From</label>
-<!-- my location btn -->
-<div style="display: flex; align-items: center; gap: 10px;">
-  <input list="from-list" id="from" name="from" placeholder="Type or select state" required>
-  
-  <button type="button" id="detect-location" title="تحديد موقعي" style="padding: 8px 14px; border: none; background-color: #007bff; color: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: background-color 0.3s ease;">
-    <i class="fa-solid fa-location-crosshairs" style="font-size: 16px;"></i>
-    <span>My Location</span>
-  </button>
-</div>
-
-  <datalist id="from-list" name="option">
-    <option value="01 Adrar">
-    <option value="02 Chlef">
-    <option value="03 Laghouat">
-    <option value="04 Oum El Bouaghi">
-    <option value="05 BATNA">
-    <option value="06 Béjaïa">
-    <option value="07 Biskra">
-    <option value="08 Béchar">
-    <option value="09 Blida">
-    <option value="10 Bouira">
-    <option value="11 Tamanrasset">
-    <option value="12 Tébessa">
-    <option value="13 Tlemcen">
-    <option value="14 Tiaret">
-    <option value="15 Tizi Ouzou">
-    <option value="16 Alger">
-    <option value="17 Djelfa">
-    <option value="18 Jijel">
-    <option value="19 Sétif">
-    <option value="20 Saïda">
-    <option value="21 Skikda">
-    <option value="22 Sidi Bel Abbès">
-    <option value="23 Annaba">
-    <option value="24 Guelma">
-    <option value="25 Constantine">
-    <option value="26 Médéa">
-    <option value="27 Mostaganem">
-    <option value="28 M’sila">
-    <option value="29 Mascara">
-    <option value="30 Ouargla">
-    <option value="31 Oran">
-    <option value="32 El Bayadh">
-    <option value="33 Illizi">
-    <option value="34 Bordj Bou Arréridj">
-    <option value="35 Boumerdès">
-    <option value="36 El Tarf">
-    <option value="37 Tindouf">
-    <option value="38 Tissemsilt">
-    <option value="39 El Oued">
-    <option value="40 Khenchela">
-    <option value="41 Souk Ahras">
-    <option value="42 Tipaza">
-    <option value="43 Mila">
-    <option value="44 Aïn Defla">
-    <option value="45 Naâma">
-    <option value="46 Aïn Témouchent">
-    <option value="47 Ghardaïa">
-    <option value="48 Relizane">
-    <option value="49 Timimoun">
-    <option value="50  Bordj Badji Mokhtar">
-    <option value="51 Ouled Djellal">
-    <option value="52 Béni Abbès">
-    <option value="53 In Salah">
-    <option value="54 In Guezzam">
-    <option value="55 Touggourt">
-    <option value="56 Djanet">
-    <option value="57  El M’Ghair">
-    <option value="58  El Meniaa">
-  </datalist>
-</div>
-
-<div class="form-group">
-  <label for="to">To</label>
-  <input list="to-list" id="to" name="to" placeholder="Type or select state" required>
-  <datalist id="to-list">
-   
-    <option value="01 Adrar">
-    <option value="02 Chlef">
-    <option value="03 Laghouat">
-    <option value="04 Oum El Bouaghi">
-    <option value="05 BATNA">
-    <option value="06 Béjaïa">
-    <option value="07 Biskra">
-    <option value="08 Béchar">
-    <option value="09 Blida">
-    <option value="10 Bouira">
-    <option value="11 Tamanrasset">
-    <option value="12 Tébessa">
-    <option value="13 Tlemcen">
-    <option value="14 Tiaret">
-    <option value="15 Tizi Ouzou">
-    <option value="16 Alger">
-    <option value="17 Djelfa">
-    <option value="18 Jijel">
-    <option value="19 Sétif">
-    <option value="20 Saïda">
-    <option value="21 Skikda">
-    <option value="22 Sidi Bel Abbès">
-    <option value="23 Annaba">
-    <option value="24 Guelma">
-    <option value="25 Constantine">
-    <option value="26 Médéa">
-    <option value="27 Mostaganem">
-    <option value="28 M’sila">
-    <option value="29 Mascara">
-    <option value="30 Ouargla">
-    <option value="31 Oran">
-    <option value="32 El Bayadh">
-    <option value="33 Illizi">
-    <option value="34 Bordj Bou Arréridj">
-    <option value="35 Boumerdès">
-    <option value="36 El Tarf">
-    <option value="37 Tindouf">
-    <option value="38 Tissemsilt">
-    <option value="39 El Oued">
-    <option value="40 Khenchela">
-    <option value="41 Souk Ahras">
-    <option value="42 Tipaza">
-    <option value="43 Mila">
-    <option value="44 Aïn Defla">
-    <option value="45 Naâma">
-    <option value="46 Aïn Témouchent">
-    <option value="47 Ghardaïa">
-    <option value="48 Relizane">
-    <option value="49 Timimoun">
-    <option value="50  Bordj Badji Mokhtar">
-    <option value="51 Ouled Djellal">
-    <option value="52 Béni Abbès">
-    <option value="53 In Salah">
-    <option value="54 In Guezzam">
-    <option value="55 Touggourt">
-    <option value="56 Djanet">
-    <option value="57  El M’Ghair">
-    <option value="58  El Meniaa">
-  </datalist>
-</div>
-</form>
+    <form class="booking-form" id="bookingForm">
 
       <div class="form-group">
-        <label for="date">Date</label>
-        <input type="date" id="date" name="date">
+        <label for="from">From</label>
+        <!-- my location btn -->
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <input list="from-list" id="from" name="from" placeholder="Type or select state" required>
+
+          <button type="button" id="detect-location" title="تحديد موقعي"
+            style="padding: 8px 14px; border: none; background-color: #007bff; color: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: background-color 0.3s ease;">
+            <i class="fa-solid fa-location-crosshairs" style="font-size: 16px;"></i>
+            <span>My Location</span>
+          </button>
+        </div>
+
+        <datalist id="from-list" name="option">
+          <option value="01 Adrar">
+          <option value="02 Chlef">
+          <option value="03 Laghouat">
+          <option value="04 Oum El Bouaghi">
+          <option value="05 BATNA">
+          <option value="06 Béjaïa">
+          <option value="07 Biskra">
+          <option value="08 Béchar">
+          <option value="09 Blida">
+          <option value="10 Bouira">
+          <option value="11 Tamanrasset">
+          <option value="12 Tébessa">
+          <option value="13 Tlemcen">
+          <option value="14 Tiaret">
+          <option value="15 Tizi Ouzou">
+          <option value="16 Alger">
+          <option value="17 Djelfa">
+          <option value="18 Jijel">
+          <option value="19 Sétif">
+          <option value="20 Saïda">
+          <option value="21 Skikda">
+          <option value="22 Sidi Bel Abbès">
+          <option value="23 Annaba">
+          <option value="24 Guelma">
+          <option value="25 Constantine">
+          <option value="26 Médéa">
+          <option value="27 Mostaganem">
+          <option value="28 M’sila">
+          <option value="29 Mascara">
+          <option value="30 Ouargla">
+          <option value="31 Oran">
+          <option value="32 El Bayadh">
+          <option value="33 Illizi">
+          <option value="34 Bordj Bou Arréridj">
+          <option value="35 Boumerdès">
+          <option value="36 El Tarf">
+          <option value="37 Tindouf">
+          <option value="38 Tissemsilt">
+          <option value="39 El Oued">
+          <option value="40 Khenchela">
+          <option value="41 Souk Ahras">
+          <option value="42 Tipaza">
+          <option value="43 Mila">
+          <option value="44 Aïn Defla">
+          <option value="45 Naâma">
+          <option value="46 Aïn Témouchent">
+          <option value="47 Ghardaïa">
+          <option value="48 Relizane">
+          <option value="49 Timimoun">
+          <option value="50  Bordj Badji Mokhtar">
+          <option value="51 Ouled Djellal">
+          <option value="52 Béni Abbès">
+          <option value="53 In Salah">
+          <option value="54 In Guezzam">
+          <option value="55 Touggourt">
+          <option value="56 Djanet">
+          <option value="57  El M’Ghair">
+          <option value="58  El Meniaa">
+        </datalist>
       </div>
 
       <div class="form-group">
-        <label for="time">Time</label>
-        <input type="time" id="time" name="time">
-      </div>
+        <label for="to">To</label>
+        <input list="to-list" id="to" name="to" placeholder="Type or select state" required>
+        <datalist id="to-list">
 
-      <div class="form-group">
-        <button type="submit" class="buy-button" id="go-button">
-          <i class="fas fa-shopping"></i> Next
-        </button>
+          <option value="01 Adrar"> 
+          <option value="02 Chlef">
+          <option value="03 Laghouat">
+          <option value="04 Oum El Bouaghi">
+          <option value="05 BATNA">
+          <option value="06 Béjaïa">
+          <option value="07 Biskra">
+          <option value="08 Béchar">
+          <option value="09 Blida">
+          <option value="10 Bouira">
+          <option value="11 Tamanrasset">
+          <option value="12 Tébessa">
+          <option value="13 Tlemcen">
+          <option value="14 Tiaret">
+          <option value="15 Tizi Ouzou">
+          <option value="16 Alger">
+          <option value="17 Djelfa">
+          <option value="18 Jijel">
+          <option value="19 Sétif">
+          <option value="20 Saïda">
+          <option value="21 Skikda">
+          <option value="22 Sidi Bel Abbès">
+          <option value="23 Annaba">
+          <option value="24 Guelma">
+          <option value="25 Constantine">
+          <option value="26 Médéa">
+          <option value="27 Mostaganem">
+          <option value="28 M’sila">
+          <option value="29 Mascara">
+          <option value="30 Ouargla">
+          <option value="31 Oran">
+          <option value="32 El Bayadh">
+          <option value="33 Illizi">
+          <option value="34 Bordj Bou Arréridj">
+          <option value="35 Boumerdès">
+          <option value="36 El Tarf">
+          <option value="37 Tindouf">
+          <option value="38 Tissemsilt">
+          <option value="39 El Oued">
+          <option value="40 Khenchela">
+          <option value="41 Souk Ahras">
+          <option value="42 Tipaza">
+          <option value="43 Mila">
+          <option value="44 Aïn Defla">
+          <option value="45 Naâma">
+          <option value="46 Aïn Témouchent">
+          <option value="47 Ghardaïa">
+          <option value="48 Relizane">
+          <option value="49 Timimoun">
+          <option value="50  Bordj Badji Mokhtar">
+          <option value="51 Ouled Djellal">
+          <option value="52 Béni Abbès">
+          <option value="53 In Salah">
+          <option value="54 In Guezzam">
+          <option value="55 Touggourt">
+          <option value="56 Djanet">
+          <option value="57  El M’Ghair">
+          <option value="58  El Meniaa">
+        </datalist>
       </div>
-      
+    </form>
+
+    <div class="form-group">
+      <label for="date">Date</label>
+      <input type="date" id="date" name="date">
+    </div>
+
+    <div class="form-group">
+      <label for="time">Time</label>
+      <input type="time" id="time" name="time">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="buy-button" id="go-button">
+        <i class="fas fa-shopping"></i> Next
+      </button>
+    </div>
+
     </form>
   </section>
 
@@ -242,8 +245,8 @@
           <button type="submit" class="btn" href="index.html">Login</button>
 
           <div class="login-register">
-            <p>Don’t have an account yet?<a href="#" class="register-link">Create</a></p> 
-          </div> 
+            <p>Don’t have an account yet?<a href="#" class="register-link">Create</a></p>
+          </div>
         </form>
       </div>
 
@@ -271,57 +274,62 @@
           <button type="submit" class="btn">Sign up</button>
 
           <div class="login-register">
-            <p>Already have a account?<a href="#" class="login-link">Login</a></p> 
+            <p>Already have a account?<a href="#" class="login-link">Login</a></p>
           </div>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- show trip ruselt -->
- <div class="container" id="trip-results">
+  <!-- show trip ruselt -->   
+
+  <div class="container" id="trip-results">
     <div class="card">
       <h2><i class="fa-solid fa-bus"></i> Book a Trip</h2>
 
       <div class="trip-box">
         <div class="trip-header">
           <p><strong>Select your trip</strong><br>
-  from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a>
-</p>
-          <a href="#" class="go-back"  id="go-back">Go back</a>
+            from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a>
+          </p>
+          <a href="#" class="go-back" id="go-back">Go back</a>
         </div>
         <p class="results">Results: 1</p>
-    <div class="trip-item">
-        <div class="trip-info">
-         <i class="fa-solid fa-bus fa-xl"></i>
-          <div class="bus-details">
-          <strong>ISLAM TRAVEL</strong>
-          <div class="contact-info">
-         <span><i class="fa-solid fa-phone"></i> 0698628760</span>
-         <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
-         <span><i class="fa-regular fa-clock"></i> 20:30</span>
+        <div class="trip-item">
+          <div class="trip-info">
+            <i class="fa-solid fa-bus fa-xl"></i>
+            <div class="bus-details">
+     
+              <strong>ISLAM TRAVEL</strong>
+              <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i> 0698628760</span>
+                <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
+                <span><i class="fa-regular fa-clock"></i> 20:30</span> 
+              </div>
+            </div>
           </div>
-         </div>
-         </div>
-         <div class="trip-links">
-         <a href="#">Trip details</a>
-    <button class="direction-btn">Price:2000.00DA</button>
-  </div>
-</div>
+          <div class="trip-links">
+            <a href="#" class="trip-details" data-name="ISLAM TRAVEL" data-phone="0698628760" data-seat="A05" data-Price="200.00DA"  onclick="selectTrip(this)">Trip details </a>
+            <!-- <a href="#">Trip details</a> -->
+            <button class="direction-btn">Price:200.00DA</button>
+            
+          </div>
+        </div>
+        
         <div class="trip-item">
           <div class="trip-info">
             <i class="fa-solid fa-bus fa-xl"></i>
             <div class="bus-details">
               <strong>SAFRR PLUS</strong>
               <div class="contact-info">
-                <span><i class="fa-solid fa-phone"></i> 0698877660</span>
+                <span><i class="fa-solid fa-phone"></i> 0655894523</span>
                 <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
                 <span><i class="fa-regular fa-clock"></i> 07:30</span>
               </div>
             </div>
           </div>
           <div class="trip-links">
-            <a href="#">Trip details</a>
+            <a href="#" class="trip-details" data-name="SAFRR PLUS" data-phone="0655894523" data-seat="30" data-Price="1500.00DA"  onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:1500.00DA</button>
           </div>
         </div>
@@ -338,8 +346,9 @@
               </div>
             </div>
           </div>
+
           <div class="trip-links">
-            <a href="#">Trip details</a>
+            <a href="#" class="trip-details" data-name="NORE WAY" data-phone="0696677550" data-seat="26" data-Price="2500.00DA" onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:2500.00DA</button>
           </div>
         </div>
@@ -357,11 +366,10 @@
             </div>
           </div>
           <div class="trip-links">
-            <a href="#">Trip details</a>
+            <a href="#" class="trip-details" data-name="AL RHAA" data-phone="0695544330" data-seat="31" data-Price="1550.00DA"  onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:1550.00DA</button>
           </div>
         </div>
-
         <div class="trip-item">
           <div class="trip-info">
             <i class="fa-solid fa-bus fa-xl"></i>
@@ -374,8 +382,9 @@
               </div>
             </div>
           </div>
+          
           <div class="trip-links">
-            <a href="#">Trip details</a>
+            <a href="#" class="trip-details" data-name="NJMA WAY" data-phone="0699988770" data-seat="25" data-Price="4500.00DA" onclick="selectTrip(this)">Trip details</a>
             <button class="direction-btn">Price:4500.00DA</button>
           </div>
         </div>
@@ -384,29 +393,22 @@
     </div>
   </div>
   <!-- trip ditil -->
-<div class="container_ditil">
+  <div class="container_ditil">
     <div class="trip-header">
       <h2>Your travel itinerary</h2>
       <button class="back-btn">Go back</button>
     </div>
 
     <div class="trip-box">
-      <div class="top">
-        <span>ISLAM TRAVEL</span>
-        <span>tele: 0698628760</span>
-        <span>Your seat number : A05</span>
+    <div class="top" id="trip-summary">
+  <span id="bus-name">#</span>
+  <span id="bus-phone">0</span>
+  <span id="seat-number">#0</span>
         <span><input type="radio" checked> One way <input type="radio"> Return</span>
       </div>
 
       <div class="route-diagram">
-        <!-- <svg viewBox="0 0 500 100"  id="route-svg">
-          <path d="M20,80 C150,10 350,10 480,80" stroke="#888" stroke-dasharray="4" fill="transparent"/>
-          <circle cx="20" cy="80" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
-          <circle cx="250" cy="20" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
-          <circle cx="480" cy="80" r="5" fill="#0a7075" data-time="Blida - 00:30"/>
-          <text x="10" y="95" font-size="12">Starting</text>
-          <text x="470" y="95" font-size="12">End</text>
-        </svg> -->
+
         <svg id="route-svg" viewBox="0 0 600 100" preserveAspectRatio="xMidYMid meet"></svg>
         <div id="tooltip" class="tooltip"></div>
       </div>
@@ -416,17 +418,29 @@
         <span><i class="fa-solid fa-calendar-days"></i> Returning: 18 Apr 2025</span>
       </div>
 
-     <div class="price">
-        <i class="fas fa-money-bill"></i> Ticket Price: <span>2000.00 DZD</span>
-     </div>
+      <div class="price">
+      <span><i class="fa-solid fa-money-bill"></i>Ticket Price: <span id="ticket-price">0dz</span></span> 
+      </div>
+      <!-- <div class="top" id="trip-summary">
+  <span id="bus-name">#</span>
+  <span id="bus-phone">0</span>
+  <span id="seat-number">#0</span>
+  <span><i class="fa-solid fa-money-bill"></i>Ticket Price: <span id="ticket-price">0dz</span>
+  <span>
+    <input type="radio" name="type" checked> One way 
+    <input type="radio" name="type"> Return
+  </span>
+</div> -->
+
 
 
       <button class="buy-btn">Buy</button>
+
     </div>
   </div>
 
-<!-- payment info -->
-   <div class="payment-container" id="paymentContainer">
+  <!-- payment info -->
+  <div class="payment-container" id="paymentContainer">
     <div class="header">
       <h2>Electronic payment procedures</h2>
       <a class="back-link" onclick="document.getElementById('paymentContainer').style.display='none'">Go back</a>
@@ -463,11 +477,11 @@
 
       <div class="right">
         <label>Choose a payment method:</label>
-<select id="payment-method">
-  <option value="">CHOOSE</option>
-  <option value="visa">VISA CARD</option>
-  <option value="dahabia">AL DAHABIA</option>
-</select>
+        <select id="payment-method">
+          <option value="">CHOOSE</option>
+          <option value="visa">VISA CARD</option>
+          <option value="dahabia">AL DAHABIA</option>
+        </select>
 
         <div class="card-info" id="cardInfo">
           <label>Cardholder name:</label>
@@ -480,79 +494,83 @@
           <input type="text" maxlength="5" placeholder="MM/YY" required>
 
           <label>CVV:</label>
-          <input type="text"  maxlength="3" placeholder="***" required>
+          <input type="text" maxlength="3" placeholder="***" required>
 
 
-<a href="ticket.html" class="buy-btn2" id="buyButton" onclick="return validateForm()">Buy</a>
+          <!-- <a href="ticket.html" class="buy-btn2"  onclick="return validateForm()" >Buy</a> -->
+          <a href="ticket.html" class="buy-btn2" id="buyButton"  onclick="return validateForm()">Buy</a>
 
+       
+        </div>
+      </div>
 
-    </div>
-  </div>
+      <script src="view/Traveler/script.js" defer></script>
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <script>
+        window.addEventListener('DOMContentLoaded', () => {
+          const params = new URLSearchParams(window.location.search);
+          if (params.get('value') === 'success') {
+            const loginBtn = document.querySelector('.btnlogin-popup');
+            if (loginBtn) {
+              loginBtn.style.display = 'none';
+            }
+          }
+        });
+      </script>
+      <script>
+        const fromInput = document.getElementById('from');
+        const toInput = document.getElementById('to');
+        const goButton = document.getElementById('go-button');
 
-  <script src="view/Traveler/script.js" defer></script>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-  <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('value') === 'success') {
-      const loginBtn = document.querySelector('.btnlogin-popup');
-      if (loginBtn) {
-        loginBtn.style.display = 'none';
-      }
-    }
-  });
-</script> 
-<script>
-  const fromInput = document.getElementById('from');
-  const toInput = document.getElementById('to');
-  const goButton = document.getElementById('go-button');
+        function validateLocations() {
+          const fromValue = fromInput.value.trim();
+          const toValue = toInput.value.trim();
 
-  function validateLocations() {
-    const fromValue = fromInput.value.trim();
-    const toValue = toInput.value.trim();
+          if (fromValue === toValue && fromValue !== '') {
+            alert("⚠️ لا يمكن اختيار نفس المنطقة في الخانتين!");
+            toInput.value = '';
+            goButton.disabled = true;
+          } else {
+            goButton.disabled = !(fromValue && toValue);
+          }
+        }
 
-    if (fromValue === toValue && fromValue !== '') {
-      alert("⚠️ لا يمكن اختيار نفس المنطقة في الخانتين!");
-      toInput.value = '';
-      goButton.disabled = true;
-    } else {
-      goButton.disabled = !(fromValue && toValue);
-    }
-  }
+        fromInput.addEventListener('change', validateLocations);
+        toInput.addEventListener('change', validateLocations);
 
-  fromInput.addEventListener('change', validateLocations);
-  toInput.addEventListener('change', validateLocations);
+        // لتعطيل الزر عند بداية التحميل إذا كانت القيم فارغة
+        window.addEventListener('DOMContentLoaded', () => {
+          goButton.disabled = true;
+        });
+      </script>
+      <script>
+        function validateForm() {
+          // اجلب كل الحقول
 
-  // لتعطيل الزر عند بداية التحميل إذا كانت القيم فارغة
-  window.addEventListener('DOMContentLoaded', () => {
-    goButton.disabled = true;
-  });
-</script>
-<script>
-  function validateForm() {
-    // اجلب كل الحقول
+          const name = document.querySelector('input[placeholder="Use national ID card name"]').value.trim();
+          const phone = document.querySelector('input[placeholder="06"]').value.trim();
+          const blood = document.querySelector('select').value;
+          const paymentMethod = document.getElementById('payment-method').value;
 
-    const name = document.querySelector('input[placeholder="Use national ID card name"]').value.trim();
-    const phone = document.querySelector('input[placeholder="06"]').value.trim();
-    const blood = document.querySelector('select').value;
-    const paymentMethod = document.getElementById('payment-method').value;
+          const cardholder = document.querySelector('input[placeholder="As in the card"]').value.trim();
+          const cardNumber = document.querySelector('input[placeholder="5894 XXXX XXXX XXXX"]').value.trim();
+          const expDate = document.querySelector('input[placeholder="MM/YY"]').value.trim();
+          const cvv = document.querySelector('input[placeholder="***"]').value.trim();
 
-    const cardholder = document.querySelector('input[placeholder="As in the card"]').value.trim();
-    const cardNumber = document.querySelector('input[placeholder="5894 XXXX XXXX XXXX"]').value.trim();
-    const expDate = document.querySelector('input[placeholder="MM/YY"]').value.trim();
-    const cvv = document.querySelector('input[placeholder="***"]').value.trim();
+          // التحقق من أن جميع الحقول غير فارغة
+          if (!name || !phone || !blood || !paymentMethod || !cardholder || !cardNumber || !expDate || !cvv) {
+            alert("Please fill in all fields before proceeding.");
+            return false; // يمنع الانتقال إلى ticket.html
+          }
 
-    // التحقق من أن جميع الحقول غير فارغة
-    if (!name || !phone || !blood || !paymentMethod || !cardholder || !cardNumber || !expDate || !cvv) {
-      alert("Please fill in all fields before proceeding.");
-      return false; // يمنع الانتقال إلى ticket.html
-    }
+          // يمكنك إضافة تحقق إضافي مثل طول الرقم أو التنسيق
+          return true; // يسمح بالانتقال
+        }
+      </script>
 
-    // يمكنك إضافة تحقق إضافي مثل طول الرقم أو التنسيق
-    return true; // يسمح بالانتقال
-  }
-</script>
+      
 
 </body>
+
 </html>
