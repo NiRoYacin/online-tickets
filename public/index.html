@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -21,18 +21,18 @@
     </div>
 
     <nav class="nav-links">
-      <a href="#" data-key="Book">Book</a>
-      <a href="#" data-key="About Us">About Us</a>
-      <a href="#" data-key="Help">Help</a>
+      <a href="#" data-key="Book" id="nav-book">Book</a>
+      <a href="#" data-key="About Us" id="nav-about">About Us</a>
+      <a href="#" data-key="Help" id="nav-help">Help</a>
     </nav>
 
     <div class="navigation">
       <div class="language-selector">
         <button class="language-btn">EN <i class="fas fa-chevron-down"></i></button>
         <ul class="language-dropdown">
-          <li><a href="#" data-lang="EN">English</a></li>
-          <li><a href="#" data-lang="FR">Français</a></li>
-          <li><a href="#" data-lang="AR">العربية</a></li>
+          <li><a href="#" data-lang="EN" id="lang-en" onclick="traduction(this)">English</a></li>
+          <li><a href="#" data-lang="FR" id="lang-fr" onclick="traduction(this)">Français</a></li>
+          <li><a href="#" data-lang="AR" id="lang-ar" onclick="traduction(this)">العربية</a></li>
         </ul>
       </div>
       <button class="btnlogin-popup" id="loginButton">Log in | Sign in</button>
@@ -42,7 +42,7 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Enjoy your trip with us</h1>
+      <h1 id="hero-title">Enjoy your trip with us</h1>
     </div>
     <div class="hero-image">
       <img id="hero-img" src="view/Traveler/bus.jpg" alt="Bus Image">
@@ -51,11 +51,11 @@
 
   <!-- Booking Section -->
   <section class="booking" id="booking-section">
-    <h2><i class="fas fa-bus"></i> Book a Trip</h2>
+    <h2><i class="fas fa-bus"></i>&nbsp;&nbsp;<span id="booking-icon">Book a Trip</span></h2>
     <form class="booking-form" id="bookingForm">
 
       <div class="form-group">
-        <label for="from">From</label>
+        <label for="from" id="from-label">From</label>
         <!-- my location btn -->
         <div style="display: flex; align-items: center; gap: 10px;">
           <input list="from-list" id="from" name="from" placeholder="Type or select state" required>
@@ -63,7 +63,7 @@
           <button type="button" id="detect-location" title="تحديد موقعي"
             style="padding: 8px 14px; border: none; background-color: #007bff; color: white; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 8px; font-size: 14px; transition: background-color 0.3s ease;">
             <i class="fa-solid fa-location-crosshairs" style="font-size: 16px;"></i>
-            <span>My Location</span>
+            <span id="my-location">My Location</span>
           </button>
         </div>
 
@@ -130,11 +130,11 @@
       </div>
 
       <div class="form-group">
-        <label for="to">To</label>
+        <label for="to" id="to-label">To</label>
         <input list="to-list" id="to" name="to" placeholder="Type or select state" required>
         <datalist id="to-list">
 
-          <option value="01 Adrar"> 
+          <option value="01 Adrar">
           <option value="02 Chlef">
           <option value="03 Laghouat">
           <option value="04 Oum El Bouaghi">
@@ -197,18 +197,18 @@
     </form>
 
     <div class="form-group">
-      <label for="date">Date</label>
+      <label for="date" id="date-label">Date</label>
       <input type="date" id="date" name="date">
     </div>
 
     <div class="form-group">
-      <label for="time">Time</label>
+      <label for="time" id="time-label">Time</label>
       <input type="time" id="time" name="time">
     </div>
 
     <div class="form-group">
       <button type="submit" class="buy-button" id="go-button">
-        <i class="fas fa-shopping"></i> Next
+        <i class="fas fa-shopping" id="next-text">Next</i>
       </button>
     </div>
 
@@ -223,99 +223,105 @@
       </span>
 
       <div class="from-box login">
-        <h2>Login</h2>
+        <h2 id="login-title">Login</h2>
         <form action="/login" method="post">
           <div class="input-box">
             <span class="icon"><ion-icon name="mail"></ion-icon></span>
             <input type="email" required name="nom_user" value="b@gmail.com">
-            <label>Email</label>
+            <!-- <label><p id="email-label" >Email</p></label> -->
+            <label id="email-label">Email</label>
           </div>
 
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
             <input type="password" required name="mot_de_passe" value="2">
-            <label>Password</label>
+            <label id="password-label">Password</label>
           </div>
 
           <div class="remember-forgot">
-            <label><input type="checkbox">Remember me</label>
-            <a href="#">Forgot Password?</a>
+            <label><input type="checkbox"><span id="remember-label">Remember me</span></label>
+            <a href="#" id="forgot-password-link">Forgot Password?</a>
           </div>
 
-          <button type="submit" class="btn" href="index.html">Login</button>
+          <button type="submit" class="btn" href="index.html" id="login-button">Login</button>
 
           <div class="login-register">
-            <p>Don’t have an account yet?<a href="#" class="register-link">Create</a></p>
+            <p><span id="register-prompt">Don't have an account yet?</span> <a href="#" class="register-link"
+                id="register-link">Create</a></p>
           </div>
         </form>
       </div>
 
       <div class="from-box register">
-        <h2>Create your Account</h2>
+        <h2 id="register-title">Create your Account</h2>
         <form action="/register" method="post">
           <div class="input-box">
             <span class="icon"><ion-icon name="person"></ion-icon></span>
             <input type="text" name="username" required>
-            <label>Username</label>
+            <label id="username-label">Username</label>
           </div>
 
           <div class="input-box">
             <span class="icon"><ion-icon name="email"></ion-icon></span>
             <input type="Email" name="email" required>
-            <label>Email or Phone</label>
+            <label id="email-label">Email or Phone</label>
           </div>
 
           <div class="input-box">
             <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
             <input type="password" name="password" required>
-            <label>Password</label>
+            <label id="password-label">Password</label>
           </div>
 
-          <button type="submit" class="btn">Sign up</button>
+          <button type="submit" class="btn" id="register-button">Sign up</button>
 
           <div class="login-register">
-            <p>Already have a account?<a href="#" class="login-link">Login</a></p>
+            <p><span id="register-prompt">Already have an account?</span><a href="#" class="login-link"
+                id="login-link">Login</a></p>
           </div>
         </form>
       </div>
     </div>
   </div>
 
-  <!-- show trip ruselt -->   
+  <!-- show trip ruselt -->
 
   <div class="container" id="trip-results">
     <div class="card">
-      <h2><i class="fa-solid fa-bus"></i> Book a Trip</h2>
+      <h2><i class="fa-solid fa-bus"></i><span id="booking-icon">Book a Trip</span></h2>
 
       <div class="trip-box">
         <div class="trip-header">
-          <p><strong>Select your trip</strong><br>
-            from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a>
+          <p><strong id="trip-selection-title">Select your trip</strong>
+            <br>
+             <!-- from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a> -->
+             from : <span style="color: blue;" id="selected-from" href="#"></span> to : <span style="color: blue;" id="selected-to" href="#"></span>
           </p>
           <a href="#" class="go-back" id="go-back">Go back</a>
         </div>
-        <p class="results">Results: 1</p>
+        <p class="results" id="trip-results">Results: 1</p>
         <div class="trip-item">
           <div class="trip-info">
             <i class="fa-solid fa-bus fa-xl"></i>
             <div class="bus-details">
-     
+
               <strong>ISLAM TRAVEL</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0698628760</span>
-                <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
-                <span><i class="fa-regular fa-clock"></i> 20:30</span> 
+                <span id="seat-info"><i class="fa-solid fa-chair"></i> Seats: 30</span>
+                <span><i class="fa-regular fa-clock"></i> 20:30</span>
               </div>
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="ISLAM TRAVEL" data-phone="0698628760" data-seat="A05" data-Price="200.00DA"  onclick="selectTrip(this)">Trip details </a>
+            <a href="#" class="trip-details" data-name="ISLAM TRAVEL" data-phone="0698628760" data-seat="A05"
+              data-Price="200.00DA" onclick="selectTrip(this)" id="trip-details-link">Trip details </a>
             <!-- <a href="#">Trip details</a> -->
             <button class="direction-btn">Price:200.00DA</button>
-            
+
           </div>
         </div>
-        
+
         <div class="trip-item">
           <div class="trip-info">
             <i class="fa-solid fa-bus fa-xl"></i>
@@ -323,14 +329,15 @@
               <strong>SAFRR PLUS</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0655894523</span>
-                <span><i class="fa-solid fa-chair"></i> Seats: 30</span>
+                <span id="seat-info"><i class="fa-solid fa-chair"></i> Seats: 30</span>
                 <span><i class="fa-regular fa-clock"></i> 07:30</span>
               </div>
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="SAFRR PLUS" data-phone="0655894523" data-seat="30" data-Price="1500.00DA"  onclick="selectTrip(this)">Trip details</a>
-            <button class="direction-btn">Price:1500.00DA</button>
+            <a href="#" class="trip-details" data-name="SAFRR PLUS" data-phone="0655894523" data-seat="30"
+              data-Price="1500.00DA" onclick="selectTrip(this)" id="trip-details-link">Trip details</a>
+            <button class="direction-btn" id="trip-price-button">Price:1500.00DA</button>
           </div>
         </div>
 
@@ -341,15 +348,16 @@
               <strong>NORE WAY</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0696677550</span>
-                <span><i class="fa-solid fa-chair"></i> Seats: 26</span>
+                <span id="seat-info"><i class="fa-solid fa-chair"></i> Seats: 26</span>
                 <span><i class="fa-regular fa-clock"></i> 10:30</span>
               </div>
             </div>
           </div>
 
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="NORE WAY" data-phone="0696677550" data-seat="26" data-Price="2500.00DA" onclick="selectTrip(this)">Trip details</a>
-            <button class="direction-btn">Price:2500.00DA</button>
+            <a href="#" class="trip-details" data-name="NORE WAY" data-phone="0696677550" data-seat="26"
+              data-Price="2500.00DA" onclick="selectTrip(this)" id="trip-details-link">Trip details</a>
+            <button class="direction-btn" id="trip-price-button">Price:2500.00DA</button>
           </div>
         </div>
 
@@ -360,14 +368,15 @@
               <strong> AL RHAAL</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0695544330</span>
-                <span><i class="fa-solid fa-chair"></i> Seats: 31</span>
+                <span id="seat-info"><i class="fa-solid fa-chair"></i> Seats: 31</span>
                 <span><i class="fa-regular fa-clock"></i> 11:30</span>
               </div>
             </div>
           </div>
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="AL RHAA" data-phone="0695544330" data-seat="31" data-Price="1550.00DA"  onclick="selectTrip(this)">Trip details</a>
-            <button class="direction-btn">Price:1550.00DA</button>
+            <a href="#" class="trip-details" data-name="AL RHAA" data-phone="0695544330" data-seat="31"
+              data-Price="1550.00DA" onclick="selectTrip(this)" id="trip-details-link">Trip details</a>
+            <button class="direction-btn" id="trip-price-button">Price:1550.00DA</button>
           </div>
         </div>
         <div class="trip-item">
@@ -377,15 +386,16 @@
               <strong>NJMA WAY</strong>
               <div class="contact-info">
                 <span><i class="fa-solid fa-phone"></i> 0699988770</span>
-                <span><i class="fa-solid fa-chair"></i> Seats: 25</span>
+                <span id="seat-info"><i class="fa-solid fa-chair"></i> Seats: 25</span>
                 <span><i class="fa-regular fa-clock"></i> 08:30</span>
               </div>
             </div>
           </div>
-          
+
           <div class="trip-links">
-            <a href="#" class="trip-details" data-name="NJMA WAY" data-phone="0699988770" data-seat="25" data-Price="4500.00DA" onclick="selectTrip(this)">Trip details</a>
-            <button class="direction-btn">Price:4500.00DA</button>
+            <a href="#" class="trip-details" data-name="NJMA WAY" data-phone="0699988770" data-seat="25"
+              data-Price="4500.00DA" onclick="selectTrip(this)" id="trip-details-link">Trip details</a>
+            <button class="direction-btn" id="trip-price-button">Price:4500.00DA</button>
           </div>
         </div>
 
@@ -395,15 +405,15 @@
   <!-- trip ditil -->
   <div class="container_ditil">
     <div class="trip-header">
-      <h2>Your travel itinerary</h2>
-      <button class="back-btn">Go back</button>
+      <h2 id="trip-title">Your travel itinerary</h2>
+      <button class="back-btn" id="back-btn">Go back</button>
     </div>
 
     <div class="trip-box">
-    <div class="top" id="trip-summary">
-  <span id="bus-name">#</span>
-  <span id="bus-phone">0</span>
-  <span id="seat-number">#0</span>
+      <div class="top" id="trip-summary">
+        <span id="bus-name">#</span>
+        <span id="bus-phone">0</span>
+        <span id="seat-number">#0</span>
         <span><input type="radio" checked> One way <input type="radio"> Return</span>
       </div>
 
@@ -419,21 +429,8 @@
       </div>
 
       <div class="price">
-      <span><i class="fa-solid fa-money-bill"></i>Ticket Price: <span id="ticket-price">0dz</span></span> 
+        <span><i class="fa-solid fa-money-bill"></i>Ticket Price: <span id="ticket-price">0dz</span></span>
       </div>
-      <!-- <div class="top" id="trip-summary">
-  <span id="bus-name">#</span>
-  <span id="bus-phone">0</span>
-  <span id="seat-number">#0</span>
-  <span><i class="fa-solid fa-money-bill"></i>Ticket Price: <span id="ticket-price">0dz</span>
-  <span>
-    <input type="radio" name="type" checked> One way 
-    <input type="radio" name="type"> Return
-  </span>
-</div> -->
-
-
-
       <button class="buy-btn">Buy</button>
 
     </div>
@@ -448,19 +445,26 @@
 
     <div class="form-content">
       <div class="left">
-        <label>Name and surname:</label>
+        <label>
+          <p id="name-label">Name and surname:</p>
+        </label>
         <div class="input-icon">
           <input type="text" placeholder="Use national ID card name">
           <i class="fa-regular fa-id-card"></i>
         </div>
 
-        <label>phone number:</label>
+        <label>
+          <p id="phone-label">phone number:</p>
+        </label>
         <div class="input-icon">
           <input type="text" placeholder="06">
           <i class="fa-solid fa-phone"></i>
+
         </div>
 
-        <label>blood type:</label>
+        <label>
+          <p id="blood-type-label">blood type:</p>
+        </label>
         <select>
           <option>A+</option>
           <option>A-</option>
@@ -484,13 +488,19 @@
         </select>
 
         <div class="card-info" id="cardInfo">
-          <label>Cardholder name:</label>
+          <label>
+            <p>Cardholder name:</p>label>
+          </label>
           <input type="text" placeholder="As in the card" required>
 
-          <label>Card number:</label>
+          <label>
+            <p>Card number:</p>label>
+          </label>
           <input type="text" maxlength="16" placeholder="5894 XXXX XXXX XXXX" required>
 
-          <label>Expiration date:</label>
+          <label>
+            <p>Expiration date:</p>
+          </label>
           <input type="text" maxlength="5" placeholder="MM/YY" required>
 
           <label>CVV:</label>
@@ -498,9 +508,9 @@
 
 
           <!-- <a href="ticket.html" class="buy-btn2"  onclick="return validateForm()" >Buy</a> -->
-          <a href="ticket.html" class="buy-btn2" id="buyButton"  onclick="return validateForm()">Buy</a>
+          <a href="ticket.html" class="buy-btn2" id="buyButton" onclick="return validateForm()">Buy</a>
 
-       
+
         </div>
       </div>
 
@@ -565,11 +575,87 @@
           }
 
           // يمكنك إضافة تحقق إضافي مثل طول الرقم أو التنسيق
-          return true; // يسمح بالانتقال
+          return true; // يسمح بالانتقال  
         }
       </script>
 
-      
+      <script>
+        function traduction(element) {
+          const bh = element?.dataset?.lang || "EN"; // EN افتراضية
+          // نحفظ اللغة المختارة
+          localStorage.setItem("selectedLang", bh);
+          if (bh === "AR") {
+            document.getElementById("nav-book").innerText = "احجز";
+            document.getElementById("nav-about").innerText = "معلومات عنا";
+            document.getElementById("nav-help").innerText = "مساعدة";
+            document.querySelector(".btnlogin-popup").innerText = "تسجيل الدخول | إنشاء حساب";
+            document.getElementById("hero-title").innerHTML = "استمتع<br>برحلتك<br>معنا";
+            document.getElementById("booking-icon").innerText = "احجز رحلة";
+            document.getElementById("from-label").innerText = "من";
+            document.getElementById("to-label").innerText = "إلى";
+            document.getElementById("my-location").innerText = "موقعي";
+            document.getElementById("date-label").innerText = "التاريخ";
+            document.getElementById("time-label").innerText = "الوقت";
+            document.getElementById("next-text").innerText = "التالي";
+            document.getElementById("login-title").innerText = "تسجيل الدخول";
+            document.getElementById("email-label").innerText = "البريد الإلكتروني";
+            document.getElementById("name-label").innerText = "الاسم واللقب:";
+            document.getElementById("phone-label").innerText = "رقم الهاتف:";
+            document.getElementById("blood-type-label").innerText = "فصيلة الدم:";
+            document.getElementById("buyButton").innerText = "شراء";
+            document.getElementById("password-label").innerText = "كلمة المرور";
+            document.getElementById("remember-label").innerText = "تذكرني";
+            document.getElementById("forgot-password-link").innerText = "نسيت كلمة المرور؟";
+            document.getElementById("register-title").innerText = "إنشاء حسابك";
+            document.getElementById("username-label").innerText = "اسم المستخدم";
+            document.getElementById("register-button").innerText = "إنشاء حساب";
+            document.getElementById("register-prompt").innerText = "ليس لديك حساب بعد؟";
+            document.getElementById("login-link").innerText = "تسجيل الدخول";
+            document.getElementById("register-link").innerText = "إنشاء حساب";
+            document.getElementById("logout-link").innerText = "تسجيل الخروج";
+            
+
+          } else if (bh === "FR") {
+            document.getElementById("nav-book").innerText = "Réserver";
+            document.getElementById("nav-about").innerText = "À propos de nous";
+            document.getElementById("nav-help").innerText = "Aide";
+            document.querySelector(".btnlogin-popup").innerText = "Connexion | S'inscrire";
+            document.getElementById("hero-title").innerText = "Profitez de votre voyage avec nous";
+            document.getElementById("booking-icon").innerText = "Réserver un voyage";
+            document.getElementById("from-label").innerText = "De";
+            document.getElementById("to-label").innerText = "À";
+            document.getElementById("my-location").innerText = "Ma position";
+            document.getElementById("date-label").innerText = "Date";
+            document.getElementById("time-label").innerText = "Heure";
+            document.getElementById("next-text").innerText = "Suivant";
+            document.getElementById("login-title").innerText = "Connexion";
+            document.getElementById("email-label").innerText = "Email";
+            document.getElementById("name-label").innerText = "Nom et prénom:";
+            document.getElementById("phone-label").innerText = "Numéro de téléphone:";
+            document.getElementById("blood-type-label").innerText = "Groupe sanguin:";
+            document.getElementById("buyButton").innerText = "Acheter";
+            document.getElementById("password-label").innerText = "Mot de passe";
+            document.getElementById("remember-label").innerText = "Se souvenir de moi";
+            document.getElementById("forgot-password-link").innerText = "Mot de passe oublié ?";
+            document.getElementById("register-title").innerText = "Créer votre compte";
+            document.getElementById("username-label").innerText = "Nom d'utilisateur";
+            document.getElementById("register-button").innerText = "S'inscrire";
+            document.getElementById("register-prompt").innerText = "Vous n'avez pas encore de compte ?";
+            document.getElementById("login-link").innerText = "Connexion";
+            document.getElementById("register-link").innerText = "Créer un compte";
+          } else {
+            location.reload();
+          }
+        }
+        // استرجاع اللغة المحفوظة عند تحميل الصفحة
+        // window.addEventListener("DOMContentLoaded", () => {
+        //   const savedLang = localStorage.getItem("selectedLang");
+        //   if (savedLang && savedLang !== "EN") {
+        //     traduction({ dataset: { lang: savedLang } });
+        //   }
+        // });
+      </script>
+
 
 </body>
 

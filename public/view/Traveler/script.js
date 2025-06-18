@@ -332,8 +332,6 @@ window.addEventListener('DOMContentLoaded', () => {
  
 // show risulta in next elements:
 
-
-
   // عندما يتم تغيير المدينة الحالية أو الوجهة
   document.getElementById('from').addEventListener('input', updateTripHeader);
   document.getElementById('to').addEventListener('input', updateTripHeader);

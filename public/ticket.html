@@ -40,12 +40,13 @@
       justify-content: center;
       align-items: center;
       height: calc(100vh - 50px);
+      
     }
 
     .ticket {
       width: 300px;
       height: 500px;
-      background-color: #f25454;
+      background-color: #6BA3BE;
       border-radius: 20px;
       position: relative;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -192,7 +193,6 @@
     </div>
   </div>
 
-
 <script>
   // عند تحميل الصفحة، نعرض البيانات
   window.onload = function () {
@@ -205,6 +205,73 @@
 </script>
 
   <script src="view/Traveler/script.js"></script>
+  <!-- <script>
+    print();
+  </script> -->
+<!-- <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const saveBtn = document.querySelector('.fa-download').parentElement;
+
+    saveBtn.addEventListener("click", function () {
+      const element = document.querySelector(".ticket");
+
+      const opt = {
+        margin: 0,
+        filename: "ticket.pdf",
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
+
+      html2pdf().set(opt).from(element).save();
+    });
+  });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
+
+<!-- HTML to Canvas -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+<!-- jsPDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const saveBtn = document.querySelector('.fa-download').parentElement;
+
+    saveBtn.addEventListener("click", function () {
+      const ticketElement = document.querySelector('.ticket');
+
+      // استخدم html2canvas لالتقاط صورة من العنصر
+      html2canvas(ticketElement).then(canvas => {
+        const imgData = canvas.toDataURL('image/jpeg');
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: "a4"
+        });
+
+        const pageWidth = pdf.internal.pageSize.getWidth();
+        const pageHeight = pdf.internal.pageSize.getHeight();
+
+        const imgProps = {
+          width: canvas.width,
+          height: canvas.height
+        };
+
+        const ratio = Math.min(pageWidth / imgProps.width, pageHeight / imgProps.height);
+        const imgWidth = imgProps.width * ratio;
+        const imgHeight = imgProps.height * ratio;
+
+        const x = (pageWidth - imgWidth) / 2;
+        const y = 20; // مسافة من الأعلى
+
+        pdf.addImage(imgData, 'JPEG', x, y, imgWidth, imgHeight);
+        pdf.save("ticket.pdf");
+      });
+    });
+  });
+</script>
 
 </body>
 </html>
