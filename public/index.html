@@ -17,7 +17,7 @@
   <header class="navbar">
     <div class="logo">
       <img src="/public/view/Admin/my_logo.jpg" alt="Logo" class="logo-img">
-      <span class="logo-text">Online&nbsp;Tickets</span>
+      <span class="logo-text" id="logo-text">Online&nbsp;Tickets</span>
     </div>
 
     <nav class="nav-links">
@@ -68,131 +68,132 @@
         </div>
 
         <datalist id="from-list" name="option">
-          <option value="01 Adrar">
-          <option value="02 Chlef">
-          <option value="03 Laghouat">
-          <option value="04 Oum El Bouaghi">
-          <option value="05 BATNA">
-          <option value="06 Béjaïa">
-          <option value="07 Biskra">
-          <option value="08 Béchar">
-          <option value="09 Blida">
-          <option value="10 Bouira">
-          <option value="11 Tamanrasset">
-          <option value="12 Tébessa">
-          <option value="13 Tlemcen">
-          <option value="14 Tiaret">
-          <option value="15 Tizi Ouzou">
-          <option value="16 Alger">
-          <option value="17 Djelfa">
-          <option value="18 Jijel">
-          <option value="19 Sétif">
-          <option value="20 Saïda">
-          <option value="21 Skikda">
-          <option value="22 Sidi Bel Abbès">
-          <option value="23 Annaba">
-          <option value="24 Guelma">
-          <option value="25 Constantine">
-          <option value="26 Médéa">
-          <option value="27 Mostaganem">
-          <option value="28 M’sila">
-          <option value="29 Mascara">
-          <option value="30 Ouargla">
-          <option value="31 Oran">
-          <option value="32 El Bayadh">
-          <option value="33 Illizi">
-          <option value="34 Bordj Bou Arréridj">
-          <option value="35 Boumerdès">
-          <option value="36 El Tarf">
-          <option value="37 Tindouf">
-          <option value="38 Tissemsilt">
-          <option value="39 El Oued">
-          <option value="40 Khenchela">
-          <option value="41 Souk Ahras">
-          <option value="42 Tipaza">
-          <option value="43 Mila">
-          <option value="44 Aïn Defla">
-          <option value="45 Naâma">
-          <option value="46 Aïn Témouchent">
-          <option value="47 Ghardaïa">
-          <option value="48 Relizane">
-          <option value="49 Timimoun">
-          <option value="50  Bordj Badji Mokhtar">
-          <option value="51 Ouled Djellal">
-          <option value="52 Béni Abbès">
-          <option value="53 In Salah">
-          <option value="54 In Guezzam">
-          <option value="55 Touggourt">
-          <option value="56 Djanet">
-          <option value="57  El M’Ghair">
-          <option value="58  El Meniaa">
+          <option value="01 Adrar"></option>
+          <option value="02 Chlef"></option>
+          <option value="03 Laghouat"></option>
+          <option value="04 Oum El Bouaghi"></option>
+          <option value="05 Batna"></option>
+          <option value="06 Bejaia"></option>
+          <option value="07 Biskra"></option>
+          <option value="08 Bechar"></option>
+          <option value="09 Blida"></option>
+          <option value="10 Bouira"></option>
+          <option value="11 Tamanrasset"></option>
+          <option value="12 Tebessa"></option>
+          <option value="13 Tlemcen"></option>
+          <option value="14 Tiaret"></option>
+          <option value="15 Tizi Ouzou"></option>
+          <option value="16 Algiers"></option>
+          <option value="17 Djelfa"></option>
+          <option value="18 Jijel"></option>
+          <option value="19 Setif"></option>
+          <option value="20 Saida"></option>
+          <option value="21 Skikda"></option>
+          <option value="22 Sidi Bel Abbes"></option>
+          <option value="23 Annaba"></option>
+          <option value="24 Guelma"></option>
+          <option value="25 Constantine"></option>
+          <option value="26 Medea"></option>
+          <option value="27 Mostaganem"></option>
+          <option value="28 M'sila"></option>
+          <option value="29 Mascara"></option>
+          <option value="30 Ouargla"></option>
+          <option value="31 Oran"></option>
+          <option value="32 El Bayadh"></option>
+          <option value="33 Illizi"></option>
+          <option value="34 Bordj Bou Arreridj"></option>
+          <option value="35 Boumerdes"></option>
+          <option value="36 El Tarf"></option>
+          <option value="37 Tindouf"></option>
+          <option value="38 Tissemsilt"></option>
+          <option value="39 El Oued"></option>
+          <option value="40 Khenchela"></option>
+          <option value="41 Souk Ahras"></option>
+          <option value="42 Tipaza"></option>
+          <option value="43 Mila"></option>
+          <option value="44 Ain Defla"></option>
+          <option value="45 Naama"></option>
+          <option value="46 Ain Temouchent"></option>
+          <option value="47 Ghardaia"></option>
+          <option value="48 Relizane"></option>
+          <option value="49 Timimoun"></option>
+          <option value="50 Bordj Badji Mokhtar"></option>
+          <option value="51 Ouled Djellal"></option>
+          <option value="52 Beni Abbes"></option>
+          <option value="53 In Salah"></option>
+          <option value="54 In Guezzam"></option>
+          <option value="55 Touggourt"></option>
+          <option value="56 Djanet"></option>
+          <option value="57 El M'Ghair"></option>
+          <option value="58 El Meniaa"></option>
         </datalist>
+
       </div>
 
       <div class="form-group">
         <label for="to" id="to-label">To</label>
         <input list="to-list" id="to" name="to" placeholder="Type or select state" required>
         <datalist id="to-list">
-
-          <option value="01 Adrar">
-          <option value="02 Chlef">
-          <option value="03 Laghouat">
-          <option value="04 Oum El Bouaghi">
-          <option value="05 BATNA">
-          <option value="06 Béjaïa">
-          <option value="07 Biskra">
-          <option value="08 Béchar">
-          <option value="09 Blida">
-          <option value="10 Bouira">
-          <option value="11 Tamanrasset">
-          <option value="12 Tébessa">
-          <option value="13 Tlemcen">
-          <option value="14 Tiaret">
-          <option value="15 Tizi Ouzou">
-          <option value="16 Alger">
-          <option value="17 Djelfa">
-          <option value="18 Jijel">
-          <option value="19 Sétif">
-          <option value="20 Saïda">
-          <option value="21 Skikda">
-          <option value="22 Sidi Bel Abbès">
-          <option value="23 Annaba">
-          <option value="24 Guelma">
-          <option value="25 Constantine">
-          <option value="26 Médéa">
-          <option value="27 Mostaganem">
-          <option value="28 M’sila">
-          <option value="29 Mascara">
-          <option value="30 Ouargla">
-          <option value="31 Oran">
-          <option value="32 El Bayadh">
-          <option value="33 Illizi">
-          <option value="34 Bordj Bou Arréridj">
-          <option value="35 Boumerdès">
-          <option value="36 El Tarf">
-          <option value="37 Tindouf">
-          <option value="38 Tissemsilt">
-          <option value="39 El Oued">
-          <option value="40 Khenchela">
-          <option value="41 Souk Ahras">
-          <option value="42 Tipaza">
-          <option value="43 Mila">
-          <option value="44 Aïn Defla">
-          <option value="45 Naâma">
-          <option value="46 Aïn Témouchent">
-          <option value="47 Ghardaïa">
-          <option value="48 Relizane">
-          <option value="49 Timimoun">
-          <option value="50  Bordj Badji Mokhtar">
-          <option value="51 Ouled Djellal">
-          <option value="52 Béni Abbès">
-          <option value="53 In Salah">
-          <option value="54 In Guezzam">
-          <option value="55 Touggourt">
-          <option value="56 Djanet">
-          <option value="57  El M’Ghair">
-          <option value="58  El Meniaa">
+          <option value="01 Adrar"></option>
+          <option value="02 Chlef"></option>
+          <option value="03 Laghouat"></option>
+          <option value="04 Oum El Bouaghi"></option>
+          <option value="05 Batna"></option>
+          <option value="06 Bejaia"></option>
+          <option value="07 Biskra"></option>
+          <option value="08 Bechar"></option>
+          <option value="09 Blida"></option>
+          <option value="10 Bouira"></option>
+          <option value="11 Tamanrasset"></option>
+          <option value="12 Tebessa"></option>
+          <option value="13 Tlemcen"></option>
+          <option value="14 Tiaret"></option>
+          <option value="15 Tizi Ouzou"></option>
+          <option value="16 Algiers"></option>
+          <option value="17 Djelfa"></option>
+          <option value="18 Jijel"></option>
+          <option value="19 Setif"></option>
+          <option value="20 Saida"></option>
+          <option value="21 Skikda"></option>
+          <option value="22 Sidi Bel Abbes"></option>
+          <option value="23 Annaba"></option>
+          <option value="24 Guelma"></option>
+          <option value="25 Constantine"></option>
+          <option value="26 Medea"></option>
+          <option value="27 Mostaganem"></option>
+          <option value="28 M'sila"></option>
+          <option value="29 Mascara"></option>
+          <option value="30 Ouargla"></option>
+          <option value="31 Oran"></option>
+          <option value="32 El Bayadh"></option>
+          <option value="33 Illizi"></option>
+          <option value="34 Bordj Bou Arreridj"></option>
+          <option value="35 Boumerdes"></option>
+          <option value="36 El Tarf"></option>
+          <option value="37 Tindouf"></option>
+          <option value="38 Tissemsilt"></option>
+          <option value="39 El Oued"></option>
+          <option value="40 Khenchela"></option>
+          <option value="41 Souk Ahras"></option>
+          <option value="42 Tipaza"></option>
+          <option value="43 Mila"></option>
+          <option value="44 Ain Defla"></option>
+          <option value="45 Naama"></option>
+          <option value="46 Ain Temouchent"></option>
+          <option value="47 Ghardaia"></option>
+          <option value="48 Relizane"></option>
+          <option value="49 Timimoun"></option>
+          <option value="50 Bordj Badji Mokhtar"></option>
+          <option value="51 Ouled Djellal"></option>
+          <option value="52 Beni Abbes"></option>
+          <option value="53 In Salah"></option>
+          <option value="54 In Guezzam"></option>
+          <option value="55 Touggourt"></option>
+          <option value="56 Djanet"></option>
+          <option value="57 El M'Ghair"></option>
+          <option value="58 El Meniaa"></option>
         </datalist>
+
       </div>
     </form>
 
@@ -294,8 +295,9 @@
         <div class="trip-header">
           <p><strong id="trip-selection-title">Select your trip</strong>
             <br>
-             <!-- from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a> -->
-             from : <span style="color: blue;" id="selected-from" href="#"></span> to : <span style="color: blue;" id="selected-to" href="#"></span>
+            <!-- from <a id="selected-from" href="#"></a> to <a id="selected-to" href="#"></a> -->
+            from : <span style="color: blue;" id="selected-from" href="#"></span> to : <span style="color: blue;"
+              id="selected-to" href="#"></span>
           </p>
           <a href="#" class="go-back" id="go-back">Go back</a>
         </div>
@@ -439,7 +441,7 @@
   <!-- payment info -->
   <div class="payment-container" id="paymentContainer">
     <div class="header">
-      <h2>Electronic payment procedures</h2>
+      <h2><span>payment procedures</span></h2>
       <a class="back-link" onclick="document.getElementById('paymentContainer').style.display='none'">Go back</a>
     </div>
 
@@ -489,12 +491,12 @@
 
         <div class="card-info" id="cardInfo">
           <label>
-            <p>Cardholder name:</p>label>
+            <p>Cardholder name:</p>
           </label>
           <input type="text" placeholder="As in the card" required>
 
           <label>
-            <p>Card number:</p>label>
+            <p>Card number:</p>
           </label>
           <input type="text" maxlength="16" placeholder="5894 XXXX XXXX XXXX" required>
 
@@ -581,10 +583,154 @@
 
       <script>
         function traduction(element) {
+
+
+
           const bh = element?.dataset?.lang || "EN"; // EN افتراضية
           // نحفظ اللغة المختارة
+
           localStorage.setItem("selectedLang", bh);
           if (bh === "AR") {
+            list_welaya = [
+              "01 أدرار","02 الشلف", "03 الأغواط", "04 أم البواقي", "05 باتنة", "06 بجاية", "07 بسكرة", "08 بشار","09 البليدة", "10 البويرة", "11 تمنراست", "12 تبسة", "13 تلمسان", "14 تيارت", "15 تيزي وزو", "16 الجزائر", "17 الجلفة", "18 جيجل", "19 سطيف", "20 سعيدة", "21 سكيكدة", "22 سيدي بلعباس", "23 عنابة", "24 قالمة", "25 قسنطينة", "26 المدية", "27 مستغانم", "28 المسيلة", "29 معسكر", "30 ورقلة", "31 وهران", "32 البيض", "33 إليزي", "34 برج بوعريريج", "35 بومرداس", "36 الطارف", "37 تندوف", "38 تيسمسيلت", "39 الوادي", "40 خنشلة", "41 سوق أهراس", "42 تيبازة", "43 ميلة", "44 عين الدفلى","45 النعامة","46 عين تيموشنت","47 غرداية","48 غليزان","49 تيميمون","50 برج باجي مختار","51 أولاد جلال","52 بني عباس","53 إن صالح","54 إن قزام","55 تقرت","56 جانت","57 المغير","58 المنيعة"
+            ];
+            const fromdatalist = document.getElementById("from-list");
+            const fromoptions = fromdatalist.children;
+            for (let i = 0; i < list_welaya.length; i++) {
+              fromoptions[i].value = list_welaya[i];
+            }
+
+            const todatalist = document.getElementById("to-list");
+            const tooptions = todatalist.children;
+            for (let i = 0; i < list_welaya.length; i++) {
+              tooptions[i].value = list_welaya[i];
+            }
+
+          //   //ترجمة اسماء الولايات
+          //   const fromdatalist = document.getElementById("from-list");
+          //   const fromoptions = fromdatalist.children;
+          //   options[0].value = "01 أدرار";
+          //   options[1].value = "02 الشلف";
+          //   options[2].value = "03 الأغواط";
+          //   options[3].value = "04 أم البواقي";
+          //   options[4].value = "05 باتنة";
+          //   options[5].value = "06 بجاية";
+          //   options[6].value = "07 بسكرة";
+          //   options[7].value = "08 بشار";
+          //   options[8].value = "09 البليدة";
+          //   options[9].value = "10 البويرة";
+          //   options[10].value = "11 تمنراست";
+          //   options[11].value = "12 تبسة";
+          //   options[12].value = "13 تلمسان";
+          //   options[13].value = "14 تيارت";
+          //   options[14].value = "15 تيزي وزو";
+          //   options[15].value = "16 الجزائر";
+          //   options[16].value = "17 الجلفة";
+          //   options[17].value = "18 جيجل";
+          //   options[18].value = "19 سطيف";
+          //   options[19].value = "20 سعيد";
+          //   options[20].value = "21 سكيكدة";
+          //   options[21].value = "22 سيدي بلعباس";
+          //   options[22].value = "23 عنابة";
+          //   options[23].value = "24 قالمة";
+          //   options[24].value = "25 قسنطينة";
+          //   options[25].value = "26 المدية";
+          //   options[26].value = "27 مستغانم";
+          //   options[27].value = "28 المسيلة";
+          //   options[28].value = "29 معسكر";
+          //   options[29].value = "30 ورقلة";
+          //   options[30].value = "31 وهران";
+          //   options[31].value = "32 البيض";
+          //   options[32].value = "33 إليزي";
+          //   options[33].value = "34 برج بوعريريج";
+          //   options[34].value = "35 بومرداس";
+          //   options[35].value = "36 الطارف";
+          //   options[36].value = "37 تندوف";
+          //   options[37].value = "38 تيسمسيلت";
+          //   options[38].value = "39 الوادي";
+          //   options[39].value = "40 خنشلة";
+          //   options[40].value = "41 سوق أهراس";
+          //   options[41].value = "42 تيبازة";
+          //   options[42].value = "43 ميلة";
+          //   options[43].value = "44 عين الدفلى";
+          //   options[44].value = "45 النعامة";
+          //   options[45].value = "46 عين تيموشنت";
+          //   options[46].value = "47 غرداية";
+          //   options[47].value = "48 غليزان";
+          //   options[48].value = "49 تيميمون";
+          //   options[49].value = "50 برج باجي مختار";
+          //   options[50].value = "51 أولاد جلال";
+          //   options[51].value = "52 بني عباس";
+          //   options[52].value = "53 إن صالح";
+          //   options[53].value = "54 إن قزام";
+          //   options[54].value = "55 تقرت";
+          //   options[55].value = "56 جانت";
+          //   options[56].value = "57 المغير";
+          //   options[57].value = "58 المنيعة";
+          //   //ترجمة اسماء الولايات
+          //  //  أحسنت كل شيءعلى ما يرام
+
+          //   const todatalist = document.getElementById("to-list");
+          //   const tooption = todatalist.children;
+          //   tooption[0].value = "01 أدرار";
+          //   tooption[1].value = "02 الشلف";
+          //   tooption[2].value = "03 الأغواط";
+          //   tooption[3].value = "04 أم البواقي";
+          //   tooption[4].value = "05 باتنة";
+          //   tooption[5].value = "06 بجاية";
+          //   tooption[6].value = "07 بسكرة";
+          //   tooption[7].value = "08 بشار";
+          //   tooption[8].value = "09 البليدة";
+          //   tooption[9].value = "10 البويرة";
+          //   tooption[10].value = "11 تمنراست";
+          //   tooption[11].value = "12 تبسة";
+          //   tooption[12].value = "13 تلمسان";
+          //   tooption[13].value = "14 تيارت";
+          //   tooption[14].value = "15 تيزي وزو";
+          //   tooption[15].value = "16 الجزائر";
+          //   tooption[16].value = "17 الجلفة";
+          //   tooption[17].value = "18 جيجل";
+          //   tooption[18].value = "19 سطيف";
+          //   tooption[19].value = "20 سعيدة";
+          //   tooption[20].value = "21 سكيكدة";
+          //   tooption[21].value = "22 سيدي بلعباس";
+          //   tooption[22].value = "23 عنابة";
+          //   tooption[23].value = "24 قالمة";
+          //   tooption[24].value = "25 قسنطينة";
+          //   tooption[25].value = "26 المدية";
+          //   tooption[26].value = "27 مستغانم";
+          //   tooption[27].value = "28 المسيلة";
+          //   tooption[28].value = "29 معسكر";
+          //   tooption[29].value = "30 ورقلة";
+          //   tooption[30].value = "31 وهران";
+          //   tooption[31].value = "32 البيض";
+          //   tooption[32].value = "33 إليزي";
+          //   tooption[33].value = "34 برج بوعريريج";
+          //   tooption[34].value = "35 بومرداس";
+          //   tooption[35].value = "36 الطارف";
+          //   tooption[36].value = "37 تندوف";
+          //   tooption[37].value = "38 تيسمسيلت";
+          //   tooption[38].value = "39 الوادي";
+          //   tooption[39].value = "40 خنشلة";
+          //   tooption[40].value = "41 سوق أهراس";
+          //   tooption[41].value = "42 تيبازة";
+          //   tooption[42].value = "43 ميلة";
+          //   tooption[43].value = "44 عين الدفلى";
+          //   tooption[44].value = "45 النعامة";
+          //   tooption[45].value = "46 عين تيموشنت";
+          //   tooption[46].value = "47 غرداية";
+          //   tooption[47].value = "48 غليزان";
+          //   tooption[48].value = "49 تيميمون";
+          //   tooption[49].value = "50 برج باجي مختار";
+          //   tooption[50].value = "51 أولاد جلال";
+          //   tooption[51].value = "52 بني عباس";
+          //   tooption[52].value = "53 إن صالح";
+          //   tooption[53].value = "54 إن قزام";
+          //   tooption[54].value = "55 تقرت";
+          //   tooption[55].value = "56 جانت";
+          //   tooption[56].value = "57 المغير";
+          //   tooption[57].value = "58 المنيعة";
+            //....................................................
             document.getElementById("nav-book").innerText = "احجز";
             document.getElementById("nav-about").innerText = "معلومات عنا";
             document.getElementById("nav-help").innerText = "مساعدة";
@@ -613,9 +759,132 @@
             document.getElementById("login-link").innerText = "تسجيل الدخول";
             document.getElementById("register-link").innerText = "إنشاء حساب";
             document.getElementById("logout-link").innerText = "تسجيل الخروج";
-            
+
 
           } else if (bh === "FR") {
+            const datalist = document.getElementById("from-list");
+            const options = datalist.children;
+            options[0].value = "01 Adrar";
+            options[1].value = "02 Chlef";
+            options[2].value = "03 Laghouat";
+            options[3].value = "04 Oum El Bouaghi";
+            options[4].value = "05 BATNA";
+            options[5].value = "06 Béjaïa";
+            options[6].value = "07 Biskra";
+            options[7].value = "08 Béchar";
+            options[8].value = "09 Blida";
+            options[9].value = "10 Bouira";
+            options[10].value = "11 Tamanrasset";
+            options[11].value = "12 Tébessa";
+            options[12].value = "13 Tlemcen";
+            options[13].value = "14 Tiaret";
+            options[14].value = "15 Tizi Ouzou";
+            options[15].value = "16 Alger";
+            options[16].value = "17 Djelfa";
+            options[17].value = "18 Jijel";
+            options[18].value = "19 Sétif";
+            options[19].value = "20 Saïda";
+            options[20].value = "21 Skikda";
+            options[21].value = "22 Sidi Bel Abbès";
+            options[22].value = "23 Annaba";
+            options[23].value = "24 Guelma";
+            options[24].value = "25 Constantine";
+            options[25].value = "26 Médéa";
+            options[26].value = "27 Mostaganem";
+            options[27].value = "28 M’sila";
+            options[28].value = "29 Mascara";
+            options[29].value = "30 Ouargla";
+            options[30].value = "31 Oran";
+            options[31].value = "32 El Bayadh";
+            options[32].value = "33 Illizi";
+            options[33].value = "34 Bordj Bou Arréridj";
+            options[34].value = "35 Boumerdès";
+            options[35].value = "36 El Tarf";
+            options[36].value = "37 Tindouf";
+            options[37].value = "38 Tissemsilt";
+            options[38].value = "39 El Oued";
+            options[39].value = "40 Khenchela";
+            options[40].value = "41 Souk Ahras";
+            options[41].value = "42 Tipaza";
+            options[42].value = "43 Mila";
+            options[43].value = "44 Aïn Defla";
+            options[44].value = "45 Naâma";
+            options[45].value = "46 Aïn Témouchent";
+            options[46].value = "47 Ghardaïa";
+            options[47].value = "48 Relizane";
+            options[48].value = "49 Timimoun";
+            options[49].value = "50  Bordj Badji Mokhtar";
+            options[50].value = "51 Ouled Djellal";
+            options[51].value = "52 Béni Abbès";
+            options[52].value = "53 In Salah";
+            options[53].value = "54 In Guezzam";
+            options[54].value = "55 Touggourt";
+            options[55].value = "56 Djanet";
+            options[56].value = "57  El M’Ghair";
+            options[57].value = "58  El Meniaa";
+            //ترجمة اسماء الولايات
+            const todatalist = document.getElementById("to-list");
+            const tooption = todatalist.children;
+            tooption[0].value = "01 Adrar";
+            tooption[1].value = "02 Chlef";
+            tooption[2].value = "03 Laghouat";
+            tooption[3].value = "04 Oum El Bouaghi";
+            tooption[4].value = "05 BATNA";
+            tooption[5].value = "06 Béjaïa";
+            tooption[6].value = "07 Biskra";
+            tooption[7].value = "08 Béchar";
+            tooption[8].value = "09 Blida";
+            tooption[9].value = "10 Bouira";
+            tooption[10].value = "11 Tamanrasset";
+            tooption[11].value = "12 Tébessa";
+            tooption[12].value = "13 Tlemcen";
+            tooption[13].value = "14 Tiaret";
+            tooption[14].value = "15 Tizi Ouzou";
+            tooption[15].value = "16 Alger";
+            tooption[16].value = "17 Djelfa";
+            tooption[17].value = "18 Jijel";
+            tooption[18].value = "19 Sétif";
+            tooption[19].value = "20 Saïda";
+            tooption[20].value = "21 Skikda";
+            tooption[21].value = "22 Sidi Bel Abbès";
+            tooption[22].value = "23 Annaba";
+            tooption[23].value = "24 Guelma";
+            tooption[24].value = "25 Constantine";
+            tooption[25].value = "26 Médéa";
+            tooption[26].value = "27 Mostaganem";
+            tooption[27].value = "28 M’sila";
+            tooption[28].value = "29 Mascara";
+            tooption[29].value = "30 Ouargla";
+            tooption[30].value = "31 Oran";
+            tooption[31].value = "32 El Bayadh";
+            tooption[32].value = "33 Illizi";
+            tooption[33].value = "34 Bordj Bou Arréridj";
+            tooption[34].value = "35 Boumerdès";
+            tooption[35].value = "36 El Tarf";
+            tooption[36].value = "37 Tindouf";
+            tooption[37].value = "38 Tissemsilt";
+            tooption[38].value = "39 El Oued";
+            tooption[39].value = "40 Khenchela";
+            tooption[40].value = "41 Souk Ahras";
+            tooption[41].value = "42 Tipaza";
+            tooption[42].value = "43 Mila";
+            tooption[43].value = "44 Aïn Defla";
+            tooption[44].value = "45 Naâma";
+            tooption[45].value = "46 Aïn Témouchent";
+            tooption[46].value = "47 Ghardaïa";
+            tooption[47].value = "48 Relizane";
+            tooption[48].value = "49 Timimoun";
+            tooption[49].value = "50  Bordj Badji Mokhtar";
+            tooption[50].value = "51 Ouled Djellal";
+            tooption[51].value = "52 Béni Abbès";
+            tooption[52].value = "53 In Salah";
+            tooption[53].value = "54 In Guezzam";
+            tooption[54].value = "55 Touggourt";
+            tooption[55].value = "56 Djanet";
+            tooption[56].value = "57  El M’Ghair";
+            tooption[57].value = "58  El Meniaa";
+            //....................................................
+
             document.getElementById("nav-book").innerText = "Réserver";
             document.getElementById("nav-about").innerText = "À propos de nous";
             document.getElementById("nav-help").innerText = "Aide";
@@ -647,6 +916,7 @@
             location.reload();
           }
         }
+
         // استرجاع اللغة المحفوظة عند تحميل الصفحة
         // window.addEventListener("DOMContentLoaded", () => {
         //   const savedLang = localStorage.getItem("selectedLang");
