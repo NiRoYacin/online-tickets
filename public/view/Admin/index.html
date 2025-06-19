@@ -327,9 +327,7 @@
     </table>
     <button class="bus-mgmt-add-bus-btn"><i class="fas fa-plus"></i> Add New Bus</button>
   </div>
-
 </div>
-
 
 <!-- Driver Form Modal -->
 <div id="driverFormModal" class="modal hidden">
@@ -338,7 +336,7 @@
     <input type="text" id="driverIdInput" placeholder="Driver ID">
     <input type="text" id="firstNameInput" placeholder="First Name">
     <input type="text" id="lastNameInput" placeholder="Last Name">
-    <button id="submitDriverBtn">Add</button>
+    <button id="submitDriverBtn" onclick="remove_()">Add</button>
     <button onclick="document.getElementById('driverFormModal').classList.add('hidden')">Cancel</button>
   </div>
 </div>

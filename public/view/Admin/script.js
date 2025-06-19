@@ -7,7 +7,7 @@ function navigateToSection(showId, hideIds = []) {
     const toHide = document.getElementById(id) || document.querySelector('.' + id);
     if (toHide) toHide.classList.add('hidden');
   });
-} 
+}
 // إظهار popup مع overlay (لو استخدمته)
 function showPopup() {
   busPopup.style.display = 'block';
@@ -83,26 +83,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-    function clearFields() {
-      nameField.value = "";
-      teleField.value = "";
-      directionField.value = "";
-      stopField.value = "";
-      timeField.value = "10:15";
-      returning.checked = false;
-      fields.forEach(field => field.classList.remove("error"));
-    }
+function clearFields() {
+  nameField.value = "";
+  teleField.value = "";
+  directionField.value = "";
+  stopField.value = "";
+  timeField.value = "10:15";
+  returning.checked = false;
+  fields.forEach(field => field.classList.remove("error"));
+}
 
-    document.getElementById("cleanBtn").addEventListener("click", clearFields);
+document.getElementById("cleanBtn").addEventListener("click", clearFields);
 
-    document.getElementById("cancelBtn").addEventListener("click", function () {
-      clearFields();
-      popup.classList.add("hidden");
-    });
+document.getElementById("cancelBtn").addEventListener("click", function () {
+  clearFields();
+  popup.classList.add("hidden");
+});
 
-    document.getElementById("goBack").addEventListener("click", function () {
-      popup.classList.add("hidden");
-    });
+document.getElementById("goBack").addEventListener("click", function () {
+  popup.classList.add("hidden");
+});
 //   showing edit bus info 
 
 const busPopup = document.getElementById('busPopup');
@@ -204,28 +204,28 @@ document.getElementById("cancelBtn").addEventListener("click", () => {
 
 
 // station list :
-    const openBtn = document.getElementById("openStationModalBtn");
-    const modal = document.getElementById("stationModal");
-    const stationInput = document.getElementById("stationInputField");
-    const stationList = document.getElementById("stationListDisplay");
+const openBtn = document.getElementById("openStationModalBtn");
+const modal = document.getElementById("stationModal");
+const stationInput = document.getElementById("stationInputField");
+const stationList = document.getElementById("stationListDisplay");
 
-    openBtn.onclick = function () {
-      modal.style.display = "flex";
-      stationInput.focus();
-    };
+openBtn.onclick = function () {
+  modal.style.display = "flex";
+  stationInput.focus();
+};
 
-    function closeStationModal() {
-      modal.style.display = "none";
-    }
+function closeStationModal() {
+  modal.style.display = "none";
+}
 
-    // إغلاق النافذة إذا ضغط المستخدم خارجها
-    window.onclick = function (event) {
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
+// إغلاق النافذة إذا ضغط المستخدم خارجها
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
+};
 
-    function addStopStation() {
+function addStopStation() {
   const name = stationInput.value.trim();
   if (name === "") {
     alert("يرجى إدخال اسم المحطة.");
@@ -268,29 +268,29 @@ document.getElementById("cancelBtn").addEventListener("click", () => {
 
 //   close sitting
 
-  // إظهار نافذة الإعدادات عند الضغط على زر الترس
-  document.getElementById("settingsBtn").addEventListener("click", function () {
-    document.getElementById("popup2").classList.remove("hidden");
-  });
+// إظهار نافذة الإعدادات عند الضغط على زر الترس
+document.getElementById("settingsBtn").addEventListener("click", function () {
+  document.getElementById("popup2").classList.remove("hidden");
+});
 
-  // إخفاء نافذة الإعدادات عند الضغط على Go Back
-  document.getElementById("goBackSettings").addEventListener("click", function () {
-    document.getElementById("popup2").classList.add("hidden");
-  });
+// إخفاء نافذة الإعدادات عند الضغط على Go Back
+document.getElementById("goBackSettings").addEventListener("click", function () {
+  document.getElementById("popup2").classList.add("hidden");
+});
 
 //   switch in setting
-    const tabs = document.querySelectorAll('.tab');
-    const contents = document.querySelectorAll('.tab-content');
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
 
-        contents.forEach(c => c.classList.remove('active'));
-        document.getElementById(tab.dataset.tab).classList.add('active');
-      });
-    });
+    contents.forEach(c => c.classList.remove('active'));
+    document.getElementById(tab.dataset.tab).classList.add('active');
+  });
+});
 
 // notification
 document.addEventListener('DOMContentLoaded', () => {
@@ -304,98 +304,109 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (busManagementCard && goBackFromBusMgmt) {
     busManagementCard.addEventListener('click', () => {
-  navigateToSection('busMgmtPage', ['cards']);
-  // ننتظر حتى يتم عرض العناصر
-  setTimeout(() => {
-    const addDriverBtn = document.querySelector('.bus-mgmt-add-driver-btn');
-    const addBusBtn = document.querySelector('.bus-mgmt-add-bus-btn');
-    const driverModal = document.getElementById('driverFormModal');
-    const busModal = document.getElementById('busFormModal');
-    const submitDriverBtn = document.getElementById('submitDriverBtn');
-    const submitBusBtn = document.getElementById('submitBusBtn');
-    const driverTableBody = document.querySelector('.bus-mgmt-driver-table tbody');
-    const busTableBody = document.querySelector('.bus-mgmt-bus-table tbody');
+      navigateToSection('busMgmtPage', ['cards']);
+      // ننتظر حتى يتم عرض العناصر
+      setTimeout(() => {
+        const addDriverBtn = document.querySelector('.bus-mgmt-add-driver-btn');
+        const addBusBtn = document.querySelector('.bus-mgmt-add-bus-btn');
+        const driverModal = document.getElementById('driverFormModal');
+        const busModal = document.getElementById('busFormModal');
+        const submitDriverBtn = document.getElementById('submitDriverBtn');
+        const submitBusBtn = document.getElementById('submitBusBtn');
+        const driverTableBody = document.querySelector('.bus-mgmt-driver-table tbody');
+        const busTableBody = document.querySelector('.bus-mgmt-bus-table tbody');
 
-    if (addDriverBtn) {
-      addDriverBtn.addEventListener('click', () => {
-        driverModal.classList.remove('hidden');
-      });
-    }
-
-    if (addBusBtn) {
-      addBusBtn.addEventListener('click', () => {
-        busModal.classList.remove('hidden');
-      });
-    }
-
-    if (submitDriverBtn) {
-      submitDriverBtn.addEventListener('click', () => {
-        const driverId = document.getElementById('driverIdInput').value.trim();
-        const firstName = document.getElementById('firstNameInput').value.trim();
-        const lastName = document.getElementById('lastNameInput').value.trim();
-
-        if (driverId && firstName && lastName) {
-          // تحقق مما إذا كان السائق موجودًا مسبقًا
-          const isDuplicate = Array.from(driverTableBody.querySelectorAll('tr')).some(row =>
-           row.children[0].textContent === driverId
-          );
-
-          if (isDuplicate) {
-           alert("سائق بهذا المعرف موجود بالفعل!");
-           return;
-          }
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${driverId}</td><td>${firstName}</td><td>${lastName}</td>`;
-           tr.addEventListener('dblclick', () => {
-           const confirmDelete = confirm("Delet the row?");
-             if (confirmDelete) {
-               tr.remove();
-              }
-           });
-          driverTableBody.appendChild(tr);
-          driverModal.classList.add('hidden');
-        } else {
-          alert("Enter all information");
+        if (addDriverBtn) {
+          addDriverBtn.addEventListener('click', () => {
+            driverModal.classList.remove('hidden');
+          });
         }
-      });
-    }
 
-    if (submitBusBtn) {
-      submitBusBtn.addEventListener('click', () => {
-        const busId = document.getElementById('busIdInput').value.trim();
-        const matricule = document.getElementById('matriculeInput').value.trim();
-        const seats = document.getElementById('seatsInput').value.trim();
-        const company = document.getElementById('companyInput').value.trim();
-
-        if (busId && matricule && seats && company) {
-         // تحقق مما إذا كانت الحافلة موجودة مسبقًا
-         const isDuplicate = Array.from(busTableBody.querySelectorAll('tr')).some(row =>
-           row.children[0].textContent === busId
-          );
-
-         if (isDuplicate) {
-           alert("حافلة بهذا المعرف موجودة بالفعل!");
-            return;
-          }
-          const tr = document.createElement('tr');
-          tr.innerHTML = `<td>${busId}</td><td>${matricule}</td><td>${seats}</td><td>${company}</td>`;
-          tr.addEventListener('dblclick', () => {
-           const confirmDelete = confirm("هل تريد حذف هذا السطر؟");
-             if (confirmDelete) {
-               tr.remove();
-              }
-           });
-
-          busTableBody.appendChild(tr);
-          busModal.classList.add('hidden');
-        } else {
-          alert("يرجى ملء كل الحقول.");
+        if (addBusBtn) {
+          addBusBtn.addEventListener('click', () => {
+            busModal.classList.remove('hidden');
+          });
         }
-      });
-    }
-    
-  }, 0);
-});
+
+        if (submitDriverBtn) {
+          submitDriverBtn.addEventListener('click', () => {
+            const driverId = document.getElementById('driverIdInput').value.trim();
+            const firstName = document.getElementById('firstNameInput').value.trim();
+            const lastName = document.getElementById('lastNameInput').value.trim();
+            // ✅ تفريغ الحقول
+            driverIdInput.value = '';
+            firstNameInput.value = '';
+            lastNameInput.value = '';
+
+            if (driverId && firstName && lastName) {
+              // تحقق مما إذا كان السائق موجودًا مسبقًا
+              const isDuplicate = Array.from(driverTableBody.querySelectorAll('tr')).some(row =>
+                row.children[0].textContent === driverId
+              );
+
+              if (isDuplicate) {
+                alert("سائق بهذا المعرف موجود بالفعل!");
+                return;
+              }
+              const tr = document.createElement('tr');
+              tr.innerHTML = `<td>${driverId}</td><td>${firstName}</td><td>${lastName}</td>`;
+              tr.addEventListener('dblclick', () => {
+                const confirmDelete = confirm("Delet the row?");
+                if (confirmDelete) {
+                  tr.remove();
+                }
+              });
+              driverTableBody.appendChild(tr);
+              driverModal.classList.add('hidden');
+            } else {
+              alert("Enter all information");
+            }
+          });
+        }
+
+        if (submitBusBtn) {
+          submitBusBtn.addEventListener('click', () => {
+            const busId = document.getElementById('busIdInput').value.trim();
+            const matricule = document.getElementById('matriculeInput').value.trim();
+            const seats = document.getElementById('seatsInput').value.trim();
+            const company = document.getElementById('companyInput').value.trim();
+            
+            // ✅ تفريغ الحقول
+            busIdInput.value = '';
+            matriculeInput.value = '';
+            seatsInput.value = '';
+            companyInput.value = '';
+
+
+            if (busId && matricule && seats && company) {
+              // تحقق مما إذا كانت الحافلة موجودة مسبقًا
+              const isDuplicate = Array.from(busTableBody.querySelectorAll('tr')).some(row =>
+                row.children[0].textContent === busId
+              );
+
+              if (isDuplicate) {
+                alert("حافلة بهذا المعرف موجودة بالفعل!");
+                return;
+              }
+              const tr = document.createElement('tr');
+              tr.innerHTML = `<td>${busId}</td><td>${matricule}</td><td>${seats}</td><td>${company}</td>`;
+              tr.addEventListener('dblclick', () => {
+                const confirmDelete = confirm("هل تريد حذف هذا السطر؟");
+                if (confirmDelete) {
+                  tr.remove();
+                }
+              });
+
+              busTableBody.appendChild(tr);
+              busModal.classList.add('hidden');
+            } else {
+              alert("يرجى ملء كل الحقول.");
+            }
+          });
+        }
+
+      }, 0);
+    });
 
 
 
@@ -427,9 +438,9 @@ goBackOrderBtn.addEventListener("click", (e) => {
   orderHistoryContainer.classList.add("hidden");
 });
 
-    document.querySelector('.buy-btn2').addEventListener('click', function () {
-      window.location.href = 'ticket.html'; // ينقلك إلى ticket.html
-    });
+document.querySelector('.buy-btn2').addEventListener('click', function () {
+  window.location.href = 'ticket.html'; // ينقلك إلى ticket.html
+});
 
 
 // bus managemnt side:
@@ -457,67 +468,66 @@ document.addEventListener("DOMContentLoaded", () => {
   // });
 
   // إضافة سائق جديد
-submitDriverBtn.addEventListener('click', () => {
-  const driverIdInput = document.getElementById('driverIdInput');
-  const firstNameInput = document.getElementById('firstNameInput');
-  const lastNameInput = document.getElementById('lastNameInput');
+  submitDriverBtn.addEventListener('click', () => {
+    const driverIdInput = document.getElementById('driverIdInput');
+    const firstNameInput = document.getElementById('firstNameInput');
+    const lastNameInput = document.getElementById('lastNameInput');
 
-  const driverId = driverIdInput.value.trim();
-  const firstName = firstNameInput.value.trim();
-  const lastName = lastNameInput.value.trim();
+    const driverId = driverIdInput.value.trim();
+    const firstName = firstNameInput.value.trim();
+    const lastName = lastNameInput.value.trim();
 
-  if (driverId && firstName && lastName) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${driverId}</td><td>${firstName}</td><td>${lastName}</td>`;
-    driverTableBody.appendChild(tr);
+    if (driverId && firstName && lastName) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${driverId}</td><td>${firstName}</td><td>${lastName}</td>`;
+      driverTableBody.appendChild(tr);
 
-    // ✅ تفريغ الحقول
-    driverIdInput.value = '';
-    firstNameInput.value = '';
-    lastNameInput.value = '';
+      // ✅ تفريغ الحقول
+      // driverIdInput.value = '';
+      // firstNameInput.value = '';
+      // lastNameInput.value = '';
 
-    // ✅ إغلاق النافذة
-    driverModal.classList.add('hidden');
-  } else {
-    alert("الرجاء ملء كل الحقول.");
-  }
-});
+      // ✅ إغلاق النافذة
+      driverModal.classList.add('hidden');
+    } else {
+      alert("الرجاء ملء كل الحقول.");
+    }
+  });
 
 
- // فتح نافذة إضافة حافلة
+  // فتح نافذة إضافة حافلة
   // addBusBtn.addEventListener('click', () => {
   //   busModal.classList.remove('hidden');
   // });
 
   // إضافة حافلة جديدة
-submitBusBtn.addEventListener('click', () => {
-  const busIdInput = document.getElementById('busIdInput');
-  const matriculeInput = document.getElementById('matriculeInput');
-  const seatsInput = document.getElementById('seatsInput');
-  const companyInput = document.getElementById('companyInput');
+  submitBusBtn.addEventListener('click', () => {
+    const busIdInput = document.getElementById('busIdInput');
+    const matriculeInput = document.getElementById('matriculeInput');
+    const seatsInput = document.getElementById('seatsInput');
+    const companyInput = document.getElementById('companyInput');
 
-  const busId = busIdInput.value.trim();
-  const matricule = matriculeInput.value.trim();
-  const seats = seatsInput.value.trim();
-  const company = companyInput.value.trim();
+    const busId = busIdInput.value.trim();
+    const matricule = matriculeInput.value.trim();
+    const seats = seatsInput.value.trim();
+    const company = companyInput.value.trim();
 
-  if (busId && matricule && seats && company) {
-    const tr = document.createElement('tr');
-    tr.innerHTML = `<td>${busId}</td><td>${matricule}</td><td>${seats}</td><td>${company}</td>`;
-    busTableBody.appendChild(tr);
+    if (busId && matricule && seats && company) {
+      const tr = document.createElement('tr');
+      tr.innerHTML = `<td>${busId}</td><td>${matricule}</td><td>${seats}</td><td>${company}</td>`;
+      busTableBody.appendChild(tr);
 
-    // ✅ تفريغ الحقول
-    busIdInput.value = '';
-    matriculeInput.value = '';
-    seatsInput.value = '';
-    companyInput.value = '';
+      // ✅ تفريغ الحقول
+      // busIdInput.value = '';
+      // matriculeInput.value = '';
+      // seatsInput.value = '';
+      // companyInput.value = '';
 
-    // ✅ إغلاق النافذة
-    busModal.classList.add('hidden');
-  } else {
-    alert("يرجى ملء كل الحقول.");
-  }
+      // ✅ إغلاق النافذة
+      busModal.classList.add('hidden');
+    } else {
+      alert("يرجى ملء كل الحقول.");
+    }
+  });
+
 });
-
-});
-
