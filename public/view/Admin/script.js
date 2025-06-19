@@ -13,7 +13,28 @@ function showPopup() {
   busPopup.style.display = 'block';
   document.querySelector('.popup-overlay').style.display = 'block';
 }
+/////////////////////// photo upload////////////////////////////
+function updatePhoto() {
+  const updatePhotoBtn = document.getElementById('updatePhotoBtn');
+  const photoInput = document.getElementById('photoInput');
+  const previewImage = document.getElementById('previewImage');
 
+  updatePhotoBtn.addEventListener('click', () => {
+    photoInput.click();
+  });
+
+  photoInput.addEventListener('change', () => {
+    const file = photoInput.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        previewImage.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+}
+////////////////////// popup hide function ///////////////////////
 function hidePopup() {
   busPopup.style.display = 'none';
   document.querySelector('.popup-overlay').style.display = 'none';
